@@ -13,11 +13,11 @@ image2: /assets/article_images/2025-04-07-hello-world/post-image-mobile.JPG
 
 # Introduction
 
-Since the beginning of cryptocurrency, I’ve tried many different clients and wallet applications to generate crypto keys. However, none of them supported **all** the coins I had, and over the years, I’ve seen many apps and wallets get hacked or some part of them becomes compromised. I tried all of the wallets which existed. At the end I stuck only on [IanColeman][iancoleman]'s website, since it could support lot of coins. Then I reed that website is maybe infected with a malicious code, compromising the randomness and security of my keys. I was always paranoid when it comes to my keys. I even ended up using [Qubes OS][qubesos] more then a year and offline versions of key generators. But no solution was enough for me since at the end I was hacked before I even noticed and my keys went away.
+Since the beginning of cryptocurrency, I’ve tried many different clients and wallet applications to generate crypto keys. However, none of them supported **all** the coins I had, and over the years, I’ve seen many apps and wallets get hacked or some parts of them becomes compromised. I tried all of the wallets which existed. At the end I stuck only on [IanColeman][iancoleman]'s website, since it could support lot of coins. Then I red that website is maybe infected with a malicious code, compromising the randomness and security of my keys. I was always paranoid when it comes to my keys. I even ended up using [Qubes OS][qubesos] more then a year and offline versions of key generators. But no solution was enough for me since at the end I was hacked before I even noticed and my keys went away.
 
 # So, who am I
 
-I was born in a country which does not exists any more. Back then when there were no smartphones, when payphones were still in use.
+I was born in a country which does not exists any more. Back then when there were no smartphones, when payphones were still in use. When people still gathered outside to exchange stories. Like all ideal time, mine was ended with a war. Since it happens when I was 4, this was a trigger inside to be a survivalist. Maybe that's why I do not give up and I manage to get what I want when I really want it. After the war, my father bought us a PC. We had a MS-DOS, and Win-NT and then Win-95. Thanks to my dad, and his curiosity for PC, made me a man which I am today. He was a hardware expert and I was a software guy. 
 
 
 
