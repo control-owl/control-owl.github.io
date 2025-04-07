@@ -8,6 +8,4 @@ Hi. I am Control Owl.
 
 I am a computer freak since forever.
 
-I think logically. True.
-
 I can not sleep, I just think forever. I have no limits.

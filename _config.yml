@@ -2,33 +2,25 @@ gems:
   - jemoji
   - jekyll-paginate
 
-title: "Dev Blog"
+title: "Control Owl"
 description: >
-   Trying to make this world a safer space.
+   Trying to make this world a safer place.
 
 email: control-owl[at]r-o0-t[dot]wtf
+cover: "/assets/images/header.jpg"
+
 logo: "/assets/images/logo.jpg"
 float_logo: true
-
-cover: "/assets/images/header.jpg"
 
 name: 'Control Owl'
 author: 'Control Owl'
 author_image: "/assets/images/author.jpg"
 
-paginate:	5
+paginate: 5
 
-url: "http://myblog.***.***" # the base hostname & protocol for your site
+url: "https://control-owl.github.io/"
 baseurl: ""
-#used to display twitter cards
-# twitter_handle: '@'
 
-#fill in disqus shortname to use disqus
-#disqus: disqus-shortname
-
-#google_analytics: UA-XXXXX-X
-
-# social icons and sharing options
 social:
   - icon:	github
     url:	https://github.com/control-owl/qr2m
@@ -37,6 +29,12 @@ social:
     share_title:
     share_link:
 
+disqus: controlowl
+
+# twitter_handle: '@'
+# google_analytics: UA-XXXXX-X
+
+# social icons and sharing options
   # - icon:	twitter
   #   url:	https://twitter.com/
   #   desc: Follow me on twitter
