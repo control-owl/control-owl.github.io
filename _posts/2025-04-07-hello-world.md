@@ -76,12 +76,12 @@ When I was in elementary school, I went to astronomy as an extracurricular activ
 
 ## Random generator
 
-I’m no scientist (at least not with a diploma), I have no idea how to set up a clean lab, nor do I want lasers in my apartment to generate keys. And I have to do it once in my life. Do I really need lasers and stuff? (yes) Like with every project, I start by searching if there’s already something out there that I want. Is it expensive? Can it be used daily? Will this change my life? All commercial lasers and kits are too big, too clumsy, too heavy, and if you make millimeter mistakes, it can be the opposite of random. Like I said, I’m no scientist; a better word would be mathematician. After extensive research, I only found one institute that does exactly what I want:
+I’m no scientist (at least not with a diploma), I have no idea how to set up a clean lab, nor do I want lasers in my apartment to generate keys. And I have to do it once in my life. Do I really need lasers and stuff? (yes) Like with every project, I start by searching if there’s already something out there that I want. Is it expensive? Can it be used daily? Will this change my life? All commercial **lasers** and kits are too big, too clumsy, too heavy, and if you make millimeter mistakes, it can be the opposite of random. Like I said, I’m no scientist; a better word would be mathematician. After extensive research, I only found one institute that does exactly what I want:
 
 
 ## The Australian National University (ANU)
 
-Finally, some scientific stuff. Hell yeah! [ANU][anu], you’re the best. The scientists there made groundbreaking technology, but nobody hypes it. I think the idea is brutal. If this thing is as how they promote it, then my PC’s RNG is a piece of shit! I tried to ask so many questions about how this works. Is it random? Can it be backtracked? As we humans understand this world, it’s it is random (at least in 2025, will see in 50 years). The problem now was, how should I do it?
+Finally, some **scientific stuff**. Hell yeah! [ANU][anu], you’re the best. The scientists there made groundbreaking technology, but nobody hypes it. I think the idea is brutal. If this thing is as how they promote it, then my PC’s RNG is a piece of shit! They have lasers and vacuum, something what i will never had. I tried to ask so many questions about how this works. Is it random? I watched so many videos about this topic. Can it be bruteforced? As we humans understand this world, it’s it is **trully random** (at least in 2025, will see in 50 years). The problem now was, how should I do it?
 
 
 # Finish
@@ -89,7 +89,7 @@ Finally, some scientific stuff. Hell yeah! [ANU][anu], you’re the best. The sc
 
 ## Tools needed
 
-I wanted to do it perfectly. So many programming languages nowadays. I know a few. None of them satisfy my needs. I went searching. It was almost C. I wanted C, since for my graduation in school, I decided to create an HTML website about C, translated into my language (since there were none) to impress my teacher, who loved C. I never learned it, just translated the whole C manual into my language. Anyone know how big C is? How many pages to cover everything there? I know, a fucking ton for a kid who wants to fuck around on summer holidays and not work. But because of this I graduated with 2 (this is very good). I started to learn quickly C, got brain cancer after a few videos, took my bike I tried to jump from a bridge. All I wanted was to create a GUI window with some text inside, and I was stuck on pointers for some time. C is for autistic people, like VIM for [Primagen][primagen] is. Whoever says C is awesome and was born after the LSD era needs to see a doctor. So I created a:
+I wanted to do it **perfectly**. So many programming languages nowadays. I know a few. None of them satisfy my needs. I went searching. It was almost C. I wanted C, since for my graduation in school, I decided to create an HTML website about C, translated into my language (since there were none) to impress my teacher, who loved C. I never learned it, just translated the whole C manual into my language. Anyone know how big C is? How many pages to cover everything there? I know, a fucking ton for a kid who wants to fuck around on summer holidays and not work. But because of this I graduated with 2 (this is very good). I started to learn quickly C, got brain cancer after a few videos, took my bike I tried to hit a truck, frontal. All I wanted, was to create a GUI window with some text inside, and I was stuck on pointers for some time. C is for autistic people, like VIM for [Primagen][primagen] is. Whoever says **C is awesome** and was born after the LSD era needs to see a doctor. Quickly. So I created a:
 
 
 ### Checklist
@@ -101,20 +101,20 @@ I wanted to do it perfectly. So many programming languages nowadays. I know a fe
 - JavaScript - web stuff, next
 - Java - too slow for my autistic brain, next
 - C# - oh makrosoft, next
-- C++ - if C was not enough, then this two extra pluses will be, next next
-- TypeScript - the name says script, next
+- C++ - if C was not enough, then this two extra crosses will be, next next
+- TypeScript - the name says: script. next
 - Go - where? to next candidate? next? next
 - Ruby - wtf is this?
 
 
 ## Ruby or not to be
 
-Ruby was my first choice, and I started to write my app in Ruby. I began learning this new language, and it went well. Before Ruby, I was, and still am, using Bash daily for scripting. Ruby was simple. Clean. The more I learned, the more I looked back to see if this was it, since I’ll dedicate a decade of my life to master my next language. Memory safety took me away, and I tried Rust. I hate it, really hate it; the more I use it, the more I hate it, yet more I hate it, more I love it, and this will be my last language. Why? Why did it go so easy in the start, and the more abstract things I wanted to do, the more I had to hurt my brain to understand Rust’s ecosystem? Maybe it’s easy, but when you introduce another framework like GTK4 and its single-threaded nature, you get stuck if you don’t understand what Rust has to offer. This guy here, [Let's Get Rusty][rusty], he knows; this guy really knows. I want to be him, slightly better when possible, probably, definitely, just wait. 
+Ruby was my first choice, and I started to write my app in Ruby. I began learning this new language, and it went well. Before Ruby, I was, and still am, using Bash daily for scripting. Ruby was simple. Clean. The more I learned, the more I looked back to see if this was it, since I’ll dedicate a decade of my life to master my next language. All what I was hearing was memory safety, and this took me away, and I tried fucking **Rust**. I hate it, really hate it; the more I use it, the more I hate it, yet more I hate it, more I love it. This will be my next language. Why? Because it went so easy in the start. No stupid intend like in Python, I can write my one-liner like in Bash, it looks like Visual Basic, it is fast and memory safe. It has compile and and runs with executing one command what for many other programming languages is just a dream. More abstract things I wanted to do, the more I had to hurt my brain to understand Rust’s ecosystem? Maybe it’s easy, but when you introduce another framework like **GTK4** and its single-threaded nature, you get stuck if you don’t understand what Rust has to offer. This guy here, [Let's Get Rusty][rusty], he knows; this guy really knows. I want to be him, slightly better when possible, probably, definitely, oh yeah. We do it rusty way.
 
 
 ## RUST+GTK=QR2M
 
-In my Amazon AWS interview, they asked me what FTP is. I said: File Transfer Protocol. He said no! Like a German, I said: [hää][heeeeee]. He said: It’s foil twisted pair. It can be Fuel Tank Pressure if you want, motherfucker; in the end, I didn’t show up for my first working day. To get a job there, you have to talk to a few philologists, and if lava lamps and Bezos’ hair perfectly align with Saturn’s anus, then you can work 10 hours a day for them. I had no name for my app. You have to create a folder and then your files, and I’m stuck on a name. What should I do? Which name? My daughter’s? Wife’s nickname? It should be Pannonia, but I have a project with that name, so I did like smart people and companies do, I created my own acronym by pressing buttons with closed eyes. I pressed a few buttons on the keyboard and decided to resolve my name afterward. Q. R. 2. M. Fuuuck!!
+In my Amazon AWS interview, they asked me what FTP stands for. I said: **File Transfer Protocol**. He said no! Like a good German citizen, I responded with a long [hääää][heeeeee]. He said: It’s foil twisted pair. It can be Fuel Tank Pressure if you want, motherfucker; in the end, I didn’t show up for my first working day. To get a job there, you have to talk to a few philologists, and if lava lamps and Bezos’ hair perfectly align with Saturn’s anus, then you can work 10 hours a day for them in a car driving from one data center to another to replace a RAM. I had no name for my app. To start a project you have to create a folder and then your files, and I was stuck on a folder's name. What should I do? Which name? My daughter’s? Wife’s nickname? It should be Pannonia, but I have a project with that name, so I did like smart people and companies do, I created my own acronym by pressing buttons with closed eyes. I pressed a few buttons on the keyboard and decided to resolve my name afterward. Q. R. 2. M. Fuuuck!!
 
 
 ---
