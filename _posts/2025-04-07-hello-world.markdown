@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello World!"
-date: 2025-07-07 14:34:25
+date: 2025-04-07 14:34:25
 categories: blog post
 tags: featured
 image: /assets/article_images/2025-04-07-hello-world/header.JPG
