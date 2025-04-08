@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hello World!
+title: "Hello World!"
 date: 2025-07-07 14:34:25
 categories: blog post
 tags: featured
