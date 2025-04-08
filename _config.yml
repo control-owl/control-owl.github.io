@@ -23,7 +23,7 @@ paginate: 5
 url: "https://control-owl.github.io"
 baseurl: ""
 
-disqus: controlowl
+disqus: control-owl
 # twitter_handle: '@'
 #google_analytics: UA-XXXXX-X
 
