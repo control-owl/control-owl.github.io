@@ -7,6 +7,8 @@ description: >
    Trying to make this world a safer place
 
 email: control-owl[at]r-o0-t[dot]wtf
+cover: "/assets/images/header.jpg"
+
 logo: "/assets/images/logo.jpg"
 float_logo: true
 
@@ -16,7 +18,7 @@ name: 'Control Owl'
 author: 'Control Owl'
 author_image: "/assets/images/author.jpg"
 
-paginate:	5
+paginate: 5
 
 url: "http://https://control-owl.github.io"
 baseurl: ""
@@ -34,6 +36,10 @@ social:
     share_title:
     share_link:
 
+# twitter_handle: '@'
+# google_analytics: UA-XXXXX-X
+
+# social icons and sharing options
   # - icon:	twitter
   #   url:	https://twitter.com/
   #   desc: Follow me on twitter
