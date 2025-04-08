@@ -10,7 +10,7 @@ image2: /assets/article_images/2025-04-07-hello-world/header-mobile.jpg
 
 # Introduction
 
-Since the beginning of cryptocurrency, I’ve tried many different clients and wallet applications to generate crypto keys. However, none of them supported **all** the coins I owned, and over the years, I’ve seen numerous apps and wallets get hacked or become compromised in some way. I experimented with every wallet that existed. Eventually, I settled on [IanColeman][iancoleman]'s website because it supported a **lot** of coins. Then I read that the website might be infected with malicious code, potentially compromising the randomness and **security** of my keys. I’ve always been paranoid about my keys. I even used [Qubes OS][qubesos] for over a year and relied on offline versions of key generators. But no solution felt sufficient, and in the end, I was hacked before I even noticed—my keys were gone.
+Since the beginning of cryptocurrency, I’ve tried many different clients and wallet applications to generate crypto keys. However, none of them supported **all** the coins I owned, and over the years, I’ve seen numerous apps and wallets get hacked or become compromised in some way. I experimented with every wallet that existed. Eventually, I settled on [IanColeman][iancoleman]'s website because it supported a **lot** of coins. Then I read that the website might be infected with malicious code, potentially compromising the randomness and **security** of my keys. I’ve always been paranoid about my keys. I even used [Qubes OS][qubes-os] for over a year and relied on offline versions of key generators. But no solution felt sufficient, and in the end, I was hacked before I even noticed—my keys were gone.
 
 # So, who am I
 
