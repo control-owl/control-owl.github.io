@@ -61,7 +61,7 @@ They brought chaos, at least for me. They’re like those stupid named Linux dis
 
 ## Family Trust
 
-It all started a couple of years ago when I wanted to create a seed that would outlive my children. Something like a **Family Trust**. Knowing what I know, I didn’t know what should be the source of my entropy random data seed. My Intel CPU with [IntelME][intel-me]? My closed-source American hardware wallet (made in China)? My Yahtzee dice? Like with all things, I went for the most secure way to do it and considered buying a few bananas and a [Geiger counter][geiger]. I didn’t do it since I thought they’d think I was up to something bad. Was pritty close to buy it on Amazon.
+It all started a couple of years ago when I wanted to create a seed that would outlive my children. Something like a **Family Trust**. Knowing what I know, I didn’t know what should be the source of my entropy random data seed. My Intel CPU with [IntelME][intel-me]? My closed-source American hardware wallet (made in China)? My Yahtzee dice? Like with all things, I went for the most secure way to do it and considered buying a few bananas and a [Geiger counter][geiger]. I didn’t do it since I thought they’d think I was up to something bad. Was pretty close to buy it on Amazon.
 
 
 ## Entropy
@@ -81,7 +81,7 @@ I’m no scientist (at least not with a diploma), I have no idea how to set up a
 
 ## The Australian National University (ANU)
 
-Finally, some **scientific stuff**. Hell yeah! [ANU][anu], you’re the best. The scientists there made groundbreaking technology, but nobody hypes it. I think the idea is brutal. If this thing is as how they promote it, then my PC’s RNG is a piece of shit! They have lasers and vacuum, something what i will never had. I tried to ask so many questions about how this works. Is it random? I watched so many videos about this topic. Can it be bruteforced? As we humans understand this world, it’s it is **trully random** (at least in 2025, will see in 50 years). The problem now was, how should I do it?
+Finally, some **scientific stuff**. Hell yeah! [ANU][anu], you’re the best. The scientists there made groundbreaking technology, but nobody hypes it. I think the idea is brutal. If this thing is as how they promote it, then my PC’s RNG is a piece of shit! They have lasers and vacuum, something what i will never had. I tried to ask so many questions about how this works. Is it random? I watched so many videos about this topic. Can it be bruteforced? As we humans understand this world, it’s it is **truly random** (at least in 2025, will see in 50 years). The problem now was, how should I do it?
 
 
 # Finish
@@ -89,12 +89,12 @@ Finally, some **scientific stuff**. Hell yeah! [ANU][anu], you’re the best. Th
 
 ## Tools needed
 
-I wanted to do it **perfectly**. So many programming languages nowadays. I know a few. None of them satisfy my needs. I went searching. It was almost C. I wanted C, since for my graduation in school, I decided to create an HTML website about C, translated into my language (since there were none) to impress my teacher, who loved C. I never learned it, just translated the whole C manual into my language. Anyone know how big C is? How many pages to cover everything there? I know, a fucking ton for a kid who wants to fuck around on summer holidays and not work. But because of this I graduated with 2 (this is very good). I started to learn quickly C, got brain cancer after a few videos, took my bike I tried to hit a truck, frontal. All I wanted, was to create a GUI window with some text inside, and I was stuck on pointers for some time. C is for autistic people, like VIM for [Primagen][primagen] is. Whoever says **C is awesome** and was born after the LSD era needs to see a doctor. Quickly. So I created a:
+I wanted to do it **perfectly**. So many programming languages nowadays. I know a few. None of them satisfy my needs. I went searching. It was almost C. I wanted C, since for my graduation in school, I decided to create an HTML website about C, translated into my language (since there were none) to impress my teacher, who loved C. I never learned it, just translated the whole C manual into my language. Anyone know how big C is? How many pages to cover everything there? I know, a fucking ton for a kid who wants to fuck around on summer holidays and not work. But because of this I graduated with 2 (this is very good). I started to learn quickly C, got brain cancer after a few videos, took my bike and tried to hit a truck, frontal. All I wanted, was to create a GUI window with some text inside, and I was stuck on pointers for some time. Allocations. C is for autistic people, like VIM for [Primagen][primagen] is. Whoever says **C is awesome** and was born after the LSD era needs to see a doctor. Quickly. So I created:
 
 
-### Checklist
+### A Checklist
 
-- Bash - no programmming language actually, next
+- Bash - not a programming language actually, next
 - Delphi - already forgot it, next
 - PHP - web stuff, next
 - Python - which 2, or 3? next
