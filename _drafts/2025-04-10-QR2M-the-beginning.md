@@ -38,14 +38,16 @@ I was struggling with jargon in this world: [modulo][modulo], [deterministic][de
 
 But I set some steps, and I open my [Obsidian][obsidian] editor, created my new project and set a initial list:
 
-1. Create entropy
-2. Create checksum
-3. Split the result into groups of 11 bits, map each to a word from the BIP39 wordlist and you have a mnemonic words
-4. Add possibility to include mnemonic passphrase
-5. HMAC the mnemonic and passphrase into a seed
-6. Feed the seed into BIP32 to generate the master private key and master chain code
-7. Derive child keys deterministically using hardened or non-hardened derivation paths, based on some BIP path.
-8. Generate public keys and addresses from derived private keys using elliptic curve
+1. Entropy
+2. Entropy checksum
+3. Mnemonic words
+4. Mnemonic passphrase
+5. Seed
+6. Master private keys
+7. Child keys with derivation path
+8. Private key
+9. Public key
+10. Address
 
 
 
