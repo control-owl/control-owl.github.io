@@ -65,7 +65,7 @@ It all started a couple of years ago when I wanted to create a seed that would o
 
 ## Entropy
 
-What is it? Do you understand the term? Not a word? But what does it mean to be entropic? Which entropy is more random? **Randomness**? Like I said, I broke my brain a few times in my life. Now again. After researching for a long time, it came down to radioactive decay or photons. Since I plan to keep all my teeth, I started to focus on **photons**, since they’re everywhere. Entropy is a science like sarcasm is a language, you might not study it, but you’re surrounded by it all the time. World without entropy has encryption, no crypto no online banking, no privacy, no trust. I will spend a lot of my life trying to understand this better since this is groundwork for my app.
+What is it? Do you understand the term? Not a word? But what does it mean to be entropic? Which entropy is more random? **Randomness**? Like I said, I broke my brain a few times in my life. Now again. After researching for a long time, it came down to radioactive decay or photons. Since I plan to keep all my teeth, I started to focus on **photons**, since they’re everywhere. Entropy is a science like sarcasm is a language, you might not study it, but you’re surrounded by it all the time. World without entropy has no encryption, no crypto, no online banking, no privacy, no trust. I will spend a lot of my life trying to understand this better since this is groundwork for my app.
 
 
 ## Astronomy
@@ -83,7 +83,7 @@ I’m no scientist (at least not with a diploma), I have no idea how to set up a
 Finally, some **scientific stuff**. Hell yeah! [ANU][anu], you’re the best. The scientists there made groundbreaking technology, but nobody hypes it. I think the idea is brutal. If this thing is as how they promote it, then my PC’s RNG is a piece of shit! They have lasers and vacuum, something what I will never had. I tried to ask so many questions about how this works. Is it random? I watched so many videos about this topic. Can it be brute-forced? As we humans understand this world, it is **truly random** (at least in 2025, will see in 50 years). The problem now was, how should I do it?
 
 
-# Finish
+# The Finish
 
 
 ## Tools needed
@@ -113,7 +113,7 @@ Ruby was my first choice, and I started to write my app in Ruby. I began learnin
 
 ## RUST+GTK=QR2M
 
-In my Amazon AWS interview, they asked me what FTP stands for. I said: **File Transfer Protocol**. He said no! Like a good German citizen, I responded with a long [hääää][heeeeee]. He said: It’s Foiled Twisted Pair cable. It can be Fuel Tank Pressure if you want, madafaka; in the end, I didn’t show up for my first working day. To get a job there, you have to talk to a few philologists, and if lava lamps and Bezos’ hair perfectly align with Saturn’s anus, then you can work 10 hours a day for them in a car driving from one data center to another to replace hardware... Like their plan, I had none. To start a project you have to create a folder and then your files, and I was stuck on a folder's name. What should I do? Which name? My daughter’s? Wife’s nickname? It should be Pannonia, but I have a project with that name, so I did like smart people and companies do, I created my own acronym by pressing keyboard buttons with my closed eyes.
+In my Amazon AWS interview, they asked me what FTP stands for. I said: **File Transfer Protocol**. He said no! Like a good German citizen, I responded with a long [hääää][heeeeee]. He said: It’s Foiled Twisted Pair cable. It can be Fuel Tank Pressure if you want, madafaka; in the end, I didn’t show up for my first working day. To get a job there, you have to talk to a few philologists, and if lava lamps and Bezos’ hair perfectly align with Saturn’s anus, then you can work 10 hours a day for them in a car driving from one data center to another to replace hardware... Like their plan, I had none. To start a project you have to create a folder and then your files, and I was stuck on a folder's name. What should I do? Which name? My daughter’s? Wife’s nickname? It should have been **Pannonia**, but I have a project with that name, so I did like smart people and companies do, I created my own acronym by pressing keyboard buttons with my closed eyes.
 
 
 > Q. R. 2. M. 
@@ -126,6 +126,7 @@ Where are we on my roadmap and what to expect in future.
 
 
 Stay tuned and sharp.
+
 Patience is a virtue.
 
 
