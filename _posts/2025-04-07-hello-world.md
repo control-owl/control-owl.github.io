@@ -146,7 +146,7 @@ Patience is a virtue.
 [heeeeee]:      https://www.youtube.com/watch?v=242jJVafSdY
 [mandrake]:     https://en.wikipedia.org/wiki/Mandriva_Linux
 [slit]:         https://en.wikipedia.org/wiki/Double-slit_experiment
-[goa-gil]:         https://en.wikipedia.org/wiki/Goa_Gil
-[star-trek]:         https://en.wikipedia.org/wiki/Star_Trek
-[qutools]:         https://qutools.com/quantum-physics-education-science-kits/
-[thorlabs]:         https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=15827
+[goa-gil]:      https://en.wikipedia.org/wiki/Goa_Gil
+[star-trek]:    https://en.wikipedia.org/wiki/Star_Trek
+[qutools]:      https://qutools.com/quantum-physics-education-science-kits/
+[thorlabs]:     https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=15827

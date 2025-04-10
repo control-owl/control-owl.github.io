@@ -1,6 +1,7 @@
 gems:
   - jemoji
   - jekyll-paginate
+  - bourbon
 
 title: "Control Owl"
 description: >
@@ -10,7 +11,7 @@ email: control-owl[at]r-o0-t[dot]wtf
 cover: "/assets/images/header.jpg"
 
 logo: "/assets/images/logo.jpg"
-float_logo: false
+float_logo: true
 
 cover: "/assets/images/header.jpg"
 
