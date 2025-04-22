@@ -16,7 +16,7 @@ image2: /assets/article_images/2025-04-10-QR2M-the-beginning/header-mobile.jpg
 
 ### Part 1
 
-It all started late in 2023 when I found a folder in my backups with few private keys which I forgot about. It was not too much but exactly that week Idid not have enough money on my bank account to pay all of my bills and still have enough for food. Me, wife, and 2 small kids. This few **0.00Bitcoins**, I exchanged, again without willing to do it, but, I had to. 
+It all started late in 2023 when I found a folder in my backups with few private keys which I forgot about. It was not too much but exactly that week I did not have enough money on my bank account to pay all of my bills and still have enough for food. Me, wife, and 2 small kids. This few **0.00Bitcoins**, I exchanged, again without willing to do it, but, I had to. 
 
 Days after, I asked myself, how many private key do I have still sleeping on my disk? This was not belonging to my last seed, it was a older one, which I forgot. Oh, I forgot again. Like I said, I have many coins. Different one, different seeds.
 
@@ -52,14 +52,14 @@ But I set some steps, and I open my [Obsidian][obsidian] editor, created my new 
 
 
 
-[learn]:    https://learnmeabitcoin.com/technical
-[bips]:     https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
+[learn]:          https://learnmeabitcoin.com/technical
+[bips]:           https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
 [endianness]:     https://en.wikipedia.org/wiki/Endianness
-[modulo]:     https://en.wikipedia.org/wiki/Modulo
-[deterministic]:     https://en.wikipedia.org/wiki/Deterministic_algorithm
-[EC]:     https://en.wikipedia.org/wiki/Elliptic-curve_cryptography
-[pbk]:     https://en.wikipedia.org/wiki/PBKDF2
-[sha]:     https://en.wikipedia.org/wiki/Secure_Hash_Algorithms
-[hmac]: https://en.wikipedia.org/wiki/HMAC
-[encoding]: https://en.wikipedia.org/wiki/Binary-to-text_encoding
-[obsidian]: https://obsidian.md/
+[modulo]:         https://en.wikipedia.org/wiki/Modulo
+[deterministic]:  https://en.wikipedia.org/wiki/Deterministic_algorithm
+[EC]:             https://en.wikipedia.org/wiki/Elliptic-curve_cryptography
+[pbk]:            https://en.wikipedia.org/wiki/PBKDF2
+[sha]:            https://en.wikipedia.org/wiki/Secure_Hash_Algorithms
+[hmac]:           https://en.wikipedia.org/wiki/HMAC
+[encoding]:       https://en.wikipedia.org/wiki/Binary-to-text_encoding
+[obsidian]:       https://obsidian.md/
