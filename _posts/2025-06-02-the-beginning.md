@@ -102,7 +102,7 @@ Then, we combine the entropy and entropy checksum into one long string, which we
 
 ## 3. Mnemonic words
 
-Like an entropy checksum, the logic is very simple. If we have entropy that is 256 bits long, then our checksum is 8 bits. Together, they make 256 + 8 = 264 bits. Then, we divide 264 by 11, resulting in 24 words. This gives us a mnemonic with 24 words, which are extracted from the official BIP39 dictionary. The logic is that we have 24 blocks of 11 bits. These 11 bits can be converted to a decimal number, which corresponds to a line in the dictionary, determining the word. Simple implementation:
+Like an entropy checksum, the logic is very simple. If we have entropy that is 256 bits long, then our checksum is 8 bits. Together, they make 256 + 8 = 264 bits. Then, we divide 264 by 11, resulting in 24. This gives us a mnemonic with 24 words, which are extracted from the official BIP39 dictionary. The logic is that we have 24 blocks of 11 bits. These 11 bits can be converted to a decimal number, which corresponds to a line in the dictionary, determining the word. Simple implementation:
 
 ```Rust
 fn generate_mnemonic_words(final_entropy_binary: &str) -> String {
@@ -170,7 +170,7 @@ Dear Satoshi, how the fuck did you do it? It was hell trying to understand it wi
 
 I couldn’t produce master keys for some time, and I went mad. I didn’t want to see how it was done in the Bitcoin source code. I’m sure I could find it there, but there’s no challenge in copy-pasting. My challenge was to do it by myself. I remember being at my job, just scrolling up and down in my code, looking at what felt like a millennium of code to see where I made a mistake. I created code, and I was pretty much sure that was it, but I always got something wrong. I created my entropy and copied it to Ian Coleman’s website to check if my master key was the same as his. Oh, I waited...
 
-Then one day, I just gave up. Fuck, man. It was too much for me. Fucking master key, fucking Bitcoin. I was mad. Really mad. I just closed everything and went back to playing Elder Scrolls Online. I played for weeks. I really like MMORPGs, and in my lifetime, I’ve played most of them. Now I’m playing ESO, or I was playing, whatever. What I wanted to say is that I needed a brain vacation. You know? That feeling when your brain isn’t here, it’s somewhere else. For me, it was ESO. I bought new DLCs and played for weeks. Now and then, when I was waiting for a loading screen in the game, I was also scrolling through my code, but just scrolling. Then I just moved a few lines up from their original position, ultimately changing the order of bytes in a sequence, and I created my first master private key.
+Then one day, I just gave up. Fuck, man. It was too much for me. Fucking master key, fucking Bitcoin. I was mad. Really mad. I just closed everything and went back to playing [Elder Scrolls Online][eso]. I played for weeks. I really like MMORPGs, and in my lifetime, I’ve played most of them. Now I’m playing ESO, or I was playing, whatever. What I wanted to say is that I needed a brain vacation. You know? That feeling when your brain isn’t here, it’s somewhere else. For me, it was ESO. I bought new DLCs and played for weeks. Now and then, when I was waiting for a loading screen in the game, I was also scrolling through my code, but just scrolling. Then I just moved a few lines up from their original position, ultimately changing the order of bytes in a sequence, and I created my first master private key.
 
 ## 7. Child keys with derivation path
 
@@ -210,11 +210,17 @@ This whole process took a toll on me. Again, I didn’t sleep for a few months, 
 
 At my job, I was constantly thinking about how to solve this process, since it was the only thing I couldn't figure out — and I really needed to. If only I could measure the stress and mental effort I had to go through to achieve it.
 
-But now that I’ve resolved the Secp256k1 keys, I’m back in the trenches of thought, trying to figure out how to resolve the ed25519 keys. Now that the "Bitcoin" derivation is done, I want to tackle the "Solana" derivation.
+But now that I’ve resolved the Secp256k1 keys, I’m back in the trenches of thought, trying to figure out how to resolve the [ed25519][ed] keys. Now that the "Bitcoin" derivation is done, I want to tackle the "Solana" derivation.
 
 And once again, I’m trying to break my brain by programming something I don’t fundamentally understand.
 
-But that is life! Trying to achieve the unachievable. Trying to understand the incomprehensible. Constant research, constant reading and learning. Math and math and math. Everything is math. I will never give up — **I will learn until I die**.
+But that is life! Trying to achieve the unachievable. Trying to understand the incomprehensible. Constant research, constant reading and learning. Math and math and math. Everything is math. 
+
+
+I will never give up
+
+
+**I will learn until I die**.
 
 
 
@@ -230,3 +236,5 @@ But that is life! Trying to achieve the unachievable. Trying to understand the i
 [hmac]: https://en.wikipedia.org/wiki/HMAC
 [encoding]: https://en.wikipedia.org/wiki/Binary-to-text_encoding
 [obsidian]: https://obsidian.md/
+[eso]: https://www.elderscrollsonline.com/de/home
+[ed]: https://en.wikipedia.org/wiki/EdDSA
