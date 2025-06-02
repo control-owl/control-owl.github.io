@@ -3,7 +3,7 @@ layout: post
 title: "Hello World!"
 date: 2025-04-07 14:34:25
 categories: blog post
-tags: featured
+# tags: featured
 image: /assets/article_images/2025-04-07-hello-world/header.jpg
 image2: /assets/article_images/2025-04-07-hello-world/header-mobile.jpg
 ---
