@@ -1,7 +1,7 @@
 ---
 layout: post
-title: QR2M - The beginning
-date: 2025-04-10 11:17:25
+title: The beginning
+date: 2025-06-02 14:07:00
 categories: blog post
 tags:
   - featured
