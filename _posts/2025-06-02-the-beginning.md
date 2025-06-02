@@ -1,12 +1,12 @@
 ---
 layout: post
 title: The beginning
-date: 2025-06-02 13:00:00
+date: 2025-06-02 00:00:00
 categories: blog post
 tags:
   - featured
-image: /assets/article_images/2025-04-10-QR2M-the-beginning/header.jpg
-image2: /assets/article_images/2025-04-10-QR2M-the-beginning/header-mobile.jpg
+image: /assets/article_images/2025-06-02-the-beginning/header.jpg
+image2: /assets/article_images/2025-06-02-the-beginning/header-mobile.jpg
 ---
 
 # The Start
