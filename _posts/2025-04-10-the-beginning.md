@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The beginning
-date: 2025-06-02 14:07:00
+date: 2025-06-02 14:00:00
 categories: blog post
 tags:
   - featured
