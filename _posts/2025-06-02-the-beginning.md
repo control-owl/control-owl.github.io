@@ -180,7 +180,7 @@ To have child keys, I had to properly generate a child key for every step in a d
 
 So, the first step was to create a child key for path 44'. Do you see that small apostrophe after 44? Do you understand what it means? I thought it was just the number 44, but it’s actually the number 2147483691. The apostrophe indicates that the path is hardened, and the number 44 should be added to 2147483647. I didn’t know this in the beginning. I had no idea...
 
-How can I describe this process to you? It’s like someone giving you a scalpel, removing all your senses, and telling you to perform brain surgery on yourself. I had no idea what I was doing, but I’d bet you I’m in the top three people in the world for the number of Bitcoin addresses created. The wrong ones, of course.
+How can I describe this process to you? It’s like someone giving you a scalpel, remove all your senses, and telling you to perform brain surgery on yourself. I had no idea what I was doing, but I’d bet you I’m in the top three people in the world for the number of Bitcoin addresses created. The wrong ones, of course.
 
 I wish I had some sort of timer to show you the effort I invested in resolving this part. Again, I tried vibe coding and asked every freely available AI that existed in 2024, but nothing worked. NOTHING!!!!!
 
