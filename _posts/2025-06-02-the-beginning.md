@@ -23,7 +23,7 @@ I have a million ideas. Nonstop something. One of them was to create a Family Tr
 
 Now I need software that will last 50 years and still be able to run. Software in which I trust ultimately. I need software without any dependencies, small, and fast. Fast because, in 50 years, it will be garbage. Trust is the key word in this whole game, so I decided to write my own wallet. Why not? I have nothing better to do in my life than to try to support all my shitcoins.
 
-As I have already decided to write my app in C, Ruby, Rust, my first step was to develop a way to convert entropy into a Bitcoin private key. I found an excellent website that covers this topic: [Learn me a Bitcoin][learn]. Excellent website, Greg, thank you, you did it very well! Excellent documentation can also be found on [Bitcoin BIPs][bips].
+As I have already decided to write my app in ~~C~~, ~~Ruby~~, Rust, my first step was to develop a way to convert entropy into a Bitcoin private key. I found an excellent website that covers this topic: [Learn me a Bitcoin][learn]. Excellent website, Greg, thank you, you did it very well! Excellent documentation can also be found on [Bitcoin BIPs][bips].
 
 
 # The List
