@@ -18,3 +18,4 @@ I am starting now, 2025-06-19 at 16:16 to try to produce executable on a GitHub.
 
 ...
 
+Few minutes later, and I got stuck by cross-platform problems. Next step, try to put it in a container.
