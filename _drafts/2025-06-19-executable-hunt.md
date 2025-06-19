@@ -19,3 +19,8 @@ I am starting now, 2025-06-19 at 16:16 to try to produce executable on a GitHub.
 ...
 
 Few minutes later, and I got stuck by cross-platform problems. Next step, try to put it in a container.
+And this is the moment when you get **300 build errors**. All linked to static libraries.
+
+Why did I decided to do first **x86_64-unknown-linux-musl** and then rest?
+
+Now think pause...
