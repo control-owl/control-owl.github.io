@@ -24,3 +24,7 @@ And this is the moment when you get **300 build errors**. All linked to static l
 Why did I decided to do first **x86_64-unknown-linux-musl** and then rest?
 
 Now think pause...
+
+...
+
+It is 2 days after. Still no progress. Waisted whole Saturday to try this
