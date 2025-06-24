@@ -27,4 +27,8 @@ Now think pause...
 
 ...
 
-It is 2 days after. Still no progress. Waisted whole Saturday to try this
+It is 2 days after. Still no progress. Waisted whole Saturday to resolve this.
+
+...
+
+Now it is 5 days after, I think I have it. Yesterday I was wake late and was almost there but when I resolve 1 problem, 2 more pops out.
