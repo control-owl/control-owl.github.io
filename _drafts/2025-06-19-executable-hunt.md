@@ -50,3 +50,12 @@ I implemented a PGP key in my GitHub which only signs my whole builded project a
 If key is missing, means, that anyone could build this app and potentially compromise some processes.
 
 If everything is green, then it is trusted!
+
+### 2025-06-28
+
+It is still not done. I am still trying to get basic build for Linux and macOS. And as I was writing this I managed to get it.
+Yesterday I noticed that Rust got an update, and I had to rewrite most of my code since println! and format! commands did changed and therefore I had more than 300 errors.
+
+It took ma whole day to repair that, and then get back to finalizing my GitHub workflows.
+
+Now I will try Linux MUSL.
