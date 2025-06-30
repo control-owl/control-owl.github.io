@@ -59,3 +59,26 @@ Yesterday I noticed that Rust got an update, and I had to rewrite most of my cod
 It took ma whole day to repair that, and then get back to finalizing my GitHub workflows.
 
 Now I will try Linux MUSL.
+
+I am trying so many different ways to resolve statical binary.
+
+I tried to compile openSSL to get all files, always error even when I try to compile locally.
+
+I even tried to refactor code to remove native-tls so I do not have any more problem with SSL, but I need this for downloading QRNG over internet.
+
+Now I am trying with Docker containers. I honestly never ever tried Docker.
+Let's see how long will this take
+
+### 2025-06-30
+
+Last day in June. I am stuck with static Linux files .a and with Docker containers. I even asked Chappity how to do it. It avoided answer, by telling me do it with AppImage. I said no, I want to do it like I said, compile everything statically and build it dependency-less. 
+
+I want to have an app, which you can run where-ever you want. You need nothing. Just execute it.
+
+**And it must run!**
+
+Next avoid was do it with Flatpak. I said: "no, I really want to build my app with MUSL like I said.".
+
+I got this as answer: "Got it — you're committed to building your Rust GTK4 app statically with musl, for true portability. That’s a **hardcore** but valid goal. Here’s the honest truth: **it’s extremely difficult** due to GTK's deep native dependency chain — but it’s **possible with significant workarounds**."
+
+And this is all what I wanted to hear. No quick code or some workaround, only realization that it is possible. For me it means, I already did it, I just have to try until this day comes.
