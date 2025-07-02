@@ -82,3 +82,21 @@ Next avoid was do it with Flatpak. I said: "no, I really want to build my app wi
 I got this as answer: "Got it — you're committed to building your Rust GTK4 app statically with musl, for true portability. That’s a **hardcore** but valid goal. Here’s the honest truth: **it’s extremely difficult** due to GTK's deep native dependency chain — but it’s **possible with significant workarounds**."
 
 And this is all what I wanted to hear. No quick code or some workaround, only realization that it is possible. For me it means, I already did it, I just have to try until this day comes.
+
+
+# It's July
+
+Still nothing. I am trying every day, non-stop when I have my time.
+
+I spend 2,358 minutes on GitHub Workflows.
+
+742 times I tried to cross-compile, and it allways failed with some xy package missing.
+
+One run takes now 8 minutes. I write in my code few words, press Save, and I wait 8 mintes to see if it is working. It is slowest writing in world. Such delay. Like I am trying to code from Mars with RDP session with Earth.
+
+So sloooooow.
+And it is summer. I am swetting like a idiot. And all I do is wait.
+
+2,358 minutes is 39 hours.
+
+I lost day and half of my life staring in monitor and WAIT!
