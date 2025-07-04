@@ -4,8 +4,8 @@ title: "Executable hunt"
 date: 2025-06-19 16:34:25
 categories: blog post
 # tags: featured
-# image: /assets/article_images/2025-04-07-hello-world/header.jpg
-# image2: /assets/article_images/2025-04-07-hello-world/header-mobile.jpg
+image: /assets/article_images/2025-06-19-executable-hunt/header.jpg
+image2: /assets/article_images/2025-06-19-executable-hunt/header-mobile.jpg
 ---
 
 # The hunt
@@ -94,9 +94,43 @@ I spend 2,358 minutes on GitHub Workflows.
 
 One run takes now 8 minutes. I write in my code few words, press Save, and I wait 8 mintes to see if it is working. It is slowest writing in world. Such delay. Like I am trying to code from Mars with RDP session with Earth.
 
-So sloooooow.
-And it is summer. I am swetting like a idiot. And all I do is wait.
+So sloooooow. It takes 480 seconds to compile first dependency, cargo-c. And then come all gtk4 dependencies. If only compile is instant, like a mouse click, click and done.
+
+And it is summer. I am sweating like a idiot in a room without a window. And all I do is wait.
 
 2,358 minutes is 39 hours.
 
 I lost day and half of my life staring in monitor and WAIT!
+
+## 2025-07-04
+
+I set up Docker local on my machine. It takes time to debug it online and waiting time. With RustRover I managed to set up docker and It works fine. I expected that I would build it at least 2 times faster as GitHub Workflows, but honestly, I am slower. It takes time to build all dependencies, and all of my 12 cores goes to 100%. Can you imagine how hot is in the room after my 8 hours long compiling marathon. I am sweating here. I managed to resolve pango static library.
+
+So, first static QR2M dependency is resolved, now the rest:
+
+- [x] pango
+- [ ] librsvg
+- [ ] glib
+- [ ] cairo
+- [ ] gdk-pixbuf
+- [ ] atk
+- [ ] harfbuzz
+- [ ] freetype
+- [ ] libepoxy
+- [ ] libx11
+- [ ] libxrender
+- [ ] libxrandr
+- [ ] libxfixes
+- [ ] libxcursor
+- [ ] libxdamage
+- [ ] libxext
+- [ ] libxi
+- [ ] libxml2
+- [ ] json-glib
+- [ ] libffi
+- [ ] openssl
+- [ ] zlib
+- [ ] xkbcommon
+- [ ] libpng
+- [ ] libjpeg-turbo
+- [ ] libadwaita
