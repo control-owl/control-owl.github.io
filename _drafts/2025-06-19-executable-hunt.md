@@ -10,7 +10,7 @@ image2: /assets/article_images/2025-06-19-executable-hunt/header-mobile.jpg
 
 # The hunt
 
-I spoke few times about mesuring my effort. Let's try to capture my moment.
+I spoke few times about measuring my effort. Let's try to capture this moment.
 
 ## The start
 
@@ -18,95 +18,102 @@ I am starting now:
 
 ### 2025-06-19 at 16:16
 
-try to produce executable on a GitHub. I started with a Linux MUSL.
+I am trying to automate my build process using GitHub CI/CD workflows. Initially, I thought that when I changed something in my app and saved it, it would produce a binary file that users could download and use as the latest version of my app. The whole process must be automated.
 
-Few minutes later, and I got stuck by cross-platform problems. 
 
-Next step, try to put it in a container and build it like that.
+I am trying to produce an executable on GitHub. I started with **Linux MUSL**.
 
-And this is the moment when you get **300 build errors**. All linked to static libraries.
+A few minutes later, I encountered **cross-platform** issues.
 
-Why did I decided to do first **x86_64-unknown-linux-musl** and then the rest?
+The next step is to put it in a **container** and build it that way.
 
-Now think pause...
+That's when you get 300 build errors. They were all linked to **static libraries**.
+
+Why did I decide to start with **x86_64-unknown-linux-musl** and then do the rest?
 
 ### 2025-06-21
 
-It is 2 days after. Still no progress. Waisted whole Saturday to resolve this.
+Two days have passed. Still no progress. I wasted the whole day Saturday trying to resolve this.
+In this moment I do not know how to read error logs and what to do with them. 
 
 ### 2025-06-24
 
-Now it is 5 days after, I think I have it. 
+It's been five days, and I think I have it.
 
-Yesterday I was wake late and was almost there but when I resolve 1 problem, 2 more pops out.
+Yesterday, I woke up late and was almost there, but when I solved one problem, two more popped up.
 
-I finally made it. It is working for now in test environment. It took me 27 try to get it properly. 
-Is 5 days too much or too less to resolve something which you never knew few months ago?
+...
+
+I finally made it! It's working for now in the test environment. It took me 27 tries to get it right.
+Is five days too long or too short to resolve something you didn't know about a few days ago?
 
 ### 2025-06-25
 
-I forgot for so many things. I am trying to resolve this, I was missing a signature file yesterday.
-I implemented a PGP key in my GitHub which only signs my whole builded project and makes sure that I am the last one who builded it.
-If key is missing, means, that anyone could build this app and potentially compromise some processes.
+I forgot so many things.Yesterday, I was missing a signature file.
+I implemented a GPG key on GitHub that only signs my entire built project and verifies that I am the last person to build it.
+If the key is missing, it means that somebody else builded this app and potentially compromised some processes.
 
 If everything is green, then it is trusted!
 
 ### 2025-06-28
 
-It is still not done. I am still trying to get basic build for Linux and macOS. And as I was writing this I managed to get it.
-Yesterday I noticed that Rust got an update, and I had to rewrite most of my code since println! and format! commands did changed and therefore I had more than 300 errors.
+It's not finished yet. I am trying to create a basic build for Linux and macOS. As I was writing this, I managed to do so.
 
-It took ma whole day to repair that, and then get back to finalizing my GitHub workflows.
+Yesterday, I noticed that Rust had been updated. I had to rewrite most of my code because the **println!** and **format!** commands had changed, resulting in more than 300 project errors.
 
-Now I will try Linux MUSL.
+It took me a whole day to fix that and then finalize my GitHub workflows.
 
-I am trying so many different ways to resolve statical binary.
+I managed to automate build process for **Linux GNU** and **macOS**.
 
-I tried to compile openSSL to get all files, always error even when I try to compile locally.
+Now, I will try **Linux MUSL**.
+If you are unfamiliar with MUSL, it is a type of build in which all dependencies are hard-coded into your app. This is how "**portable**" apps are produced. A portable app can run on any Linux system. For me, this is the perfect app since Linux has so many different distributions, such as Debian, Fedora, and Arch Linux.
 
-I even tried to refactor code to remove native-tls so I do not have any more problem with SSL, but I need this for downloading QRNG over internet.
+I have tried many different ways to resolve the static binary.
 
-Now I am trying with Docker containers. I honestly never ever tried Docker.
-Let's see how long will this take
+I tried to compile OpenSSL to get all the files, but I always got an error, even when I tried to compile it locally.
+
+I tried refactoring the code to remove native-tls, but then I couldn't download the QRNG over the internet.
+
+Now, I am trying **Docker** containers. Honestly, I have never tried Docker before.
+Let's see how long this will take.
 
 ### 2025-06-30
 
-Last day in June. I am stuck with static Linux files .a and with Docker containers. I even asked Chappity how to do it. It avoided answer, by telling me do it with AppImage. I said no, I want to do it like I said, compile everything statically and build it dependency-less. 
+The last day of **June**. I'm stuck with static Linux files and Docker containers. I even asked Chappity for help. He avoided answering by telling me to do it with **AppImage**. I said no; I want to compile everything statically and build it without dependencies.
 
-I want to have an app, which you can run where-ever you want. You need nothing. Just execute it.
+I want an app that you can run wherever you want, no dependencies, just execute it and that's it.
 
 **And it must run!**
 
-Next avoid was do it with Flatpak. I said: "no, I really want to build my app with MUSL like I said.".
+The next option was to do it with Flatpak. I said: "*No, I really want to build my app with MUSL, as I said.*"
 
-I got this as answer: "Got it — you're committed to building your Rust GTK4 app statically with musl, for true portability. That’s a **hardcore** but valid goal. Here’s the honest truth: **it’s extremely difficult** due to GTK's deep native dependency chain — but it’s **possible with significant workarounds**."
+I received this answer: "*Got it—you're committed to building your Rust GTK4 app statically with MUSL for true portability. That’s a **hardcore** but valid goal. Here’s the honest truth: It’s extremely difficult due to GTK's deep native dependency chain, but possible with significant workarounds.*"
 
-And this is all what I wanted to hear. No quick code or some workaround, only realization that it is possible. For me it means, I already did it, I just have to try until this day comes.
-
+This is exactly what I wanted to hear. There's no quick code or workaround; only the realization that **it's possible**. To me, that means I've already done it; I just have to keep trying until the day I succeed.
 
 # It's July
 
-Still nothing. I am trying every day, non-stop when I have my time.
+Still nothing. I try every day without stopping when I have time.
 
-I spend 2,358 minutes on GitHub Workflows.
+I have spent **2,358 minutes** on GitHub Workflows.
 
-742 times I tried to cross-compile, and it allways failed with some xy package missing.
+I have tried to cross-compile **742** times, and it always fails due to a missing xy package.
 
-One run takes now 8 minutes. I write in my code few words, press Save, and I wait 8 mintes to see if it is working. It is slowest writing in world. Such delay. Like I am trying to code from Mars with RDP session with Earth.
+One run now takes **eight minutes**. I write a few words in my code, press Save, and wait eight minutes to see if it's working. It is the slowest writing process in the world. Such a delay! It's like I'm trying to code from Mars with an RDP session to Earth.
 
-So sloooooow. It takes 480 seconds to compile first dependency, cargo-c. And then come all gtk4 dependencies. If only compile is instant, like a mouse click, click and done.
+It's so slow. It takes 480 seconds to compile the first dependency, Cargo-C. Then come all the GTK4 dependencies. If only the compile were instant, like a click of a mouse, click and done.
 
-And it is summer. I am sweating like a idiot in a room without a window. And all I do is wait.
+And it is summer. I'm sweating like an idiot in a windowless room. All I do is wait.
 
-2,358 minutes is 39 hours.
+2,358 minutes is **39 hours**.
 
-I lost day and half of my life staring in monitor and WAIT!
+I lost a day and a half of my life staring at the monitor and waiting!
 
 ## 2025-07-04
 
-I set up Docker local on my machine. It takes time to debug it online and waiting time. With RustRover I managed to set up docker and It works fine. I expected that I would build it at least 2 times faster as GitHub Workflows, but honestly, I am slower. It takes time to build all dependencies, and all of my 12 cores goes to 100%. Can you imagine how hot is in the room after my 8 hours long compiling marathon. I am sweating here. I managed to resolve pango static library.
+I set up Docker **locally** on my machine. Debugging it online takes time, as does the waiting time. With RustRover, I managed to set up Docker, and it works fine. I expected to build it at least twice as fast as GitHub Workflows, but honestly, I'm slower. Building all the dependencies takes time, and all 12 of my cores go to 100%. Can you imagine how hot the room is after my eight-hour **compiling marathon**? I'm sweating here. I managed to resolve the Pango static library.
 
-So, first static QR2M dependency is resolved, now the rest:
+The first static QR2M dependency is resolved; now, on to the rest:
 
 - [x] pango
 - [ ] librsvg
@@ -134,3 +141,94 @@ So, first static QR2M dependency is resolved, now the rest:
 - [ ] libpng
 - [ ] libjpeg-turbo
 - [ ] libadwaita
+
+## 2025-07-13
+
+This whole dependency hunt was exhausting. I solved one problem, and then five more arose. I solved them, and then ten more popped up. It's been a month almost, since I started trying to compile MUSL.
+
+It's so complex that I'm asking Grok for help debugging it. I have never manually compiled apps, nor have I ever used **meson** or **make**.
+
+I have no idea what I'm compiling or how to interpret the error log. Man, this is getting hard! First, I compiled **gtk4**, then I tried **libadwaita**. I got a very long error output of over 2,000 lines, and even if I got 20 lines, I have no idea how to resolve them alone. I copy and paste my error output into Grok. This machine can understand it and suggest which libraries I have to pre-compile for it to work.
+
+I started with GTK4 and libadwaita; now, I have this:
+
+![My library](/assets/article_images/2025-06-19-executable-hunt/deps.png)
+
+I think this is insufficient. I expect more errors. Maybe I'll manage to resolve them all tomorrow (on my birthday).
+
+The whole process is exhausting and time-consuming. I change one letter in my code and then wait **25 minutes** to see an error like this when I click Start.
+
+```Log
+...
+161.8 [1225/1233] Linking target gtk/libgtk-4.so.1.1903.0
+165.7 ninja: job failed: cc  -o gtk/libgtk-4.so.1.1903.0  -Wl,--as-needed -Wl,--no-undefined -shared -fPIC -Wl,-soname,libgtk-4.so.1 -Wl,--whole-archive -Wl,--start-group gtk/libgtk.a gtk/css/libgtk_css.a gdk/libgdk.a gsk/libgsk.a -Wl,--no-whole-archive gsk/libgsk_f16c.a -Wl,-Bsymbolic -Wl,-z,relro -Wl,-z,now -Wl,--export-dynamic /home/QR2M/compile-circus/STATIC/lib/libgmodule-2.0.a /usr/lib/libintl.so /home/QR2M/compile-circus/STATIC/lib/libglib-2.0.a /usr/lib/libatomic.so -lm -pthread /usr/lib/libpcre2-8.so /home/QR2M/compile-circus/STATIC/lib/libgobject-2.0.a /usr/lib/../lib/libintl.so /usr/lib/../lib/libatomic.so /usr/lib/../lib/libpcre2-8.so /usr/lib/../lib/libffi.so /home/QR2M/compile-circus/STATIC/lib/libgio-2.0.a /usr/lib/../lib/libz.so /home/QR2M/compile-circus/STATIC/lib/libpangocairo-1.0.a /home/QR2M/compile-circus/STATIC/lib/libpangoft2-1.0.a /home/QR2M/compile-circus/STATIC/lib/libpango-1.0.a /usr/lib/../lib/libfribidi.so /usr/lib/../lib/libharfbuzz.so /home/QR2M/compile-circus/STATIC/lib/libcairo.a -ldl /usr/lib/../lib/libfontconfig.so /usr/lib/../lib/libfreetype.so /usr/lib/../lib/libpng16.so /usr/lib/../lib/libXext.so /usr/lib/../lib/libXrender.so /usr/lib/../lib/libX11.so /usr/lib/../lib/libxcb-render.so /usr/lib/../lib/libxcb-shm.so /usr/lib/../lib/libxcb.so /usr/lib/../lib/libpixman-1.so /usr/lib/libharfbuzz.so /usr/lib/libharfbuzz-subset.so /usr/lib/libfribidi.so /home/QR2M/compile-circus/STATIC/lib/libcairo-gobject.a /usr/lib/libfontconfig.so /usr/lib/libfreetype.so /home/QR2M/compile-circus/STATIC/lib/libgdk_pixbuf-2.0.a /usr/lib/libepoxy.so /home/QR2M/compile-circus/STATIC/lib/librsvg-2.a /home/QR2M/compile-circus/STATIC/lib/libgraphene-1.0.a /usr/lib/libXi.so /usr/lib/libX11.so -lintl /usr/lib/libpng16.so /usr/lib/libz.so /usr/lib/libXext.so /usr/lib/libXrender.so /usr/lib/libxcb-render.so /usr/lib/libxcb-shm.so /usr/lib/libxcb.so /usr/lib/libpixman-1.so /usr/lib/libtiff.so /usr/lib/libjpeg.so /usr/lib/libxkbcommon.so /usr/lib/libwayland-client.so /usr/lib/libwayland-egl.so /usr/lib/libXcursor.so /usr/lib/libXdamage.so /usr/lib/libXfixes.so /usr/lib/libXrandr.so /usr/lib/libXinerama.so /home/QR2M/compile-circus/STATIC/lib/libcairo-script-interpreter.a -lintl -Wl,--end-group
+165.7 /usr/lib/gcc/x86_64-alpine-linux-musl/14.2.0/../../../../x86_64-alpine-linux-musl/bin/ld: /home/QR2M/compile-circus/STATIC/lib/librsvg-2.a(libxml2_la-xmlIO.o): warning: relocation against `stdin' in read-only section `.text'
+165.7 /usr/lib/gcc/x86_64-alpine-linux-musl/14.2.0/../../../../x86_64-alpine-linux-musl/bin/ld: /home/QR2M/compile-circus/STATIC/lib/librsvg-2.a(libxml2_la-xmlIO.o): relocation R_X86_64_PC32 against symbol `stdin' can not be used when making a shared object; recompile with -fPIC
+165.7 /usr/lib/gcc/x86_64-alpine-linux-musl/14.2.0/../../../../x86_64-alpine-linux-musl/bin/ld: final link failed: bad value
+165.7 collect2: error: ld returned 1 exit status
+168.3 ninja: subcommand failed
+------
+Dockerfile:75
+--------------------
+  73 |     RUN chmod +x $PROJECT_DIR/librsvg.sh && $PROJECT_DIR/librsvg.sh         # Compiles
+  74 |     RUN chmod +x $PROJECT_DIR/appstream.sh && $PROJECT_DIR/appstream.sh     # Compiles
+  75 | >>> RUN chmod +x $PROJECT_DIR/gtk4.sh && $PROJECT_DIR/gtk4.sh               # FAIL
+  76 |     RUN chmod +x $PROJECT_DIR/libadwaita.sh && $PROJECT_DIR/libadwaita.sh   #
+  77 |     
+--------------------
+```
+
+I am almost there. Maybe I can do it in one month. **Hardcore task**.
+
+My build output has **30000 lines of output**, and I am still somewhere on the half way. 
+
+![Last build](/assets/article_images/2025-06-19-executable-hunt/last-build.png)
+
+
+I trim my error log just to get file names and extensions. I learned that all file extension in my case must end with **.a** (static files), and when I see **.so**, then I need to compile this library manually and statically.
+
+| Library                     | State |
+| --------------------------- | ----- |
+| libcairo-gobject            | a     |
+| libcairo-script-interpreter | a     |
+| libcairo                    | a     |
+| libgdk_pixbuf-2             | a     |
+| libgio-2                    | a     |
+| libglib-2                   | a     |
+| libgmodule-2                | a     |
+| libgobject-2                | a     |
+| libgraphene-1               | a     |
+| libharfbuzz-subset          | a     |
+| libharfbuzz                 | a     |
+| libpango-1                  | a     |
+| libpangocairo-1             | a     |
+| libpangoft2-1               | a     |
+| librsvg-2                   | a     |
+| libatomic                   | so    |
+| libepoxy                    | so    |
+| libffi                      | so    |
+| libfontconfig               | so    |
+| libfreetype                 | so    |
+| libfribidi                  | so    |
+| libintl                     | so    |
+| libjpeg                     | so    |
+| libpcre2-8                  | so    |
+| libpixman-1                 | so    |
+| libpng16                    | so    |
+| libtiff                     | so    |
+| libwayland-client           | so    |
+| libwayland-egl              | so    |
+| libX11                      | so    |
+| libxcb-render               | so    |
+| libxcb-shm                  | so    |
+| libxcb                      | so    |
+| libXcursor                  | so    |
+| libXdamage                  | so    |
+| libXext                     | so    |
+| libXfixes                   | so    |
+| libXi                       | so    |
+| libXinerama                 | so    |
+| libxkbcommon                | so    |
+| libXrandr                   | so    |
+| libXrender                  | so    |
+| libz                        | so    |
