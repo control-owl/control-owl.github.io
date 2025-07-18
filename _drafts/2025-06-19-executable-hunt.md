@@ -232,3 +232,74 @@ I trim my error log just to get file names and extensions. I learned that all fi
 | libXrandr                   | so    |
 | libXrender                  | so    |
 | libz                        | so    |
+
+
+## 2025-07-18
+
+A day before a month, still no build.
+
+I managed to create a big progress, by setting this ENV variables in Dockerfile:
+
+```Dockerfile
+ENV PROJECT_DIR="/home/QR2M"
+ENV STATIC_DIR="$PROJECT_DIR/compile-circus/STATIC"
+ENV PKG_CONFIG_LIBDIR="$STATIC_DIR/lib/pkgconfig"
+ENV PKG_CONFIG_PATH="$STATIC_DIR/lib/pkgconfig"
+ENV CFLAGS="-O2 -fno-semantic-interposition"
+ENV CXXFLAGS="-O2 -fno-semantic-interposition"
+ENV PKG_CONFIG="pkg-config --static"
+ENV LDFLAGS="-L$STATIC_DIR/lib -static"
+ENV CC="gcc"
+ENV CXX="g++"
+ENV AR="ar"
+ENV RANLIB="ranlib"
+ENV STRIP="strip"
+```
+
+```Dockerfile
+# -.-. --- .--. -.-- .-. .. --. .... - DEPENDENCIES -.-. --- .--. -.-- .-. .. --. .... -
+#|                Library          | Dep            | Status   | Error
+#| ------------------------------- | -------------- | -------- | --------
+RUN $PROJECT_DIR/pcre2.sh         #| gtk4, glib     | Compiles |
+RUN $PROJECT_DIR/glib.sh          #| cairo,harfbuzz | Fail     | Assert failed: libintl.type_name() == internal
+RUN $PROJECT_DIR/zlib.sh          #| cairo,libxml2  | Compiles |
+#RUN $PROJECT_DIR/gettext.sh      #| cairo          | Fail     | Takes 15 minutes and fails
+RUN $PROJECT_DIR/brotli.sh        #| cairo          | Compiles |
+RUN $PROJECT_DIR/libxau.sh        #| cairo          | Compiles |
+RUN $PROJECT_DIR/libxcb.sh        #| cairo          | Compiles |
+RUN $PROJECT_DIR/libx11.sh        #| cairo          | Compiles |
+RUN $PROJECT_DIR/libxrender.sh    #| cairo          | Compiles |
+RUN $PROJECT_DIR/libxext.sh       #| cairo          | Compiles |
+RUN $PROJECT_DIR/nghttp2.sh       #| curl           | Compiles |
+RUN $PROJECT_DIR/xz.sh            #| appstream      | Compiles |
+RUN $PROJECT_DIR/libeconf.sh      #| appstream      | Compiles |
+RUN $PROJECT_DIR/curl.sh          #| appstream      | Compiles |
+RUN $PROJECT_DIR/graphene.sh      #| gtk4           | Compiles |
+RUN $PROJECT_DIR/libxml2.sh       #| gtk4           | Compiles |
+RUN $PROJECT_DIR/freetype.sh      #| harfbuzz, gtk4 | Compiles |
+RUN $PROJECT_DIR/libbz2.sh        #| harfbuzz       | Compiles |
+RUN $PROJECT_DIR/fribidi.sh       #| gtk4           | Compiles |
+RUN $PROJECT_DIR/libepoxy.sh      #| gtk4           | Compiles |
+RUN $PROJECT_DIR/libtiff.sh       #| gtk4           | Compiles |
+RUN $PROJECT_DIR/fontconfig.sh    #| gtk4           | Compiles |
+RUN $PROJECT_DIR/libffi.sh        #| gtk4           | Compiles |
+RUN $PROJECT_DIR/libjpeg-turbo.sh #| gtk4           | Compiles |
+RUN $PROJECT_DIR/libpng.sh        #| gtk4           | Compiles |
+RUN $PROJECT_DIR/pixman.sh        #| gtk4           | Compiles |
+RUN $PROJECT_DIR/harfbuzz.sh      #| gtk4           |  |
+RUN $PROJECT_DIR/cairo.sh         #| librsvg        |  |
+RUN $PROJECT_DIR/pango.sh         #| librsvg        |  |
+RUN $PROJECT_DIR/gdk-pixbuf.sh    #| librsvg        |  |
+RUN $PROJECT_DIR/cargo-c.sh       #| librsvg        |  |
+RUN $PROJECT_DIR/librsvg.sh       #| QR2M           |  |
+RUN $PROJECT_DIR/appstream.sh     #| QR2M           |  |
+RUN $PROJECT_DIR/gtk4.sh          #| QR2M           |  |
+RUN $PROJECT_DIR/libadwaita.sh    #| QR2M           |  |
+
+# -.-. --- .--. -.-- .-. .. --. .... - PROJECT COMPILE -.-. --- .--. -.-- .-. .. --. .... -
+RUN chmod +x $PROJECT_DIR/compile-circus.sh && $PROJECT_DIR/compile-circus.sh
+```
+
+I am exahausted from this constant testing. I am not at 1000th GitHub workflow.
+
+I still do not want to give up.
