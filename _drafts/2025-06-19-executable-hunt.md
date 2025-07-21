@@ -368,3 +368,22 @@ RUN $PROJECT_DIR/libadwaita.sh    #| QR2M               |
 # -.-. --- .--. -.-- .-. .. --. .... - PROJECT COMPILE -.-. --- .--. -.-- .-. .. --. .... -
 RUN chmod +x $PROJECT_DIR/compile-circus.sh && $PROJECT_DIR/compile-circus.sh
 ```
+
+## 2025-07-22
+
+I made a huge progress yesterady late. I am now left to build librsvg and libadwaita.
+
+I think I will get librsvg in few more tries. Debugging code is now geting extreme hard. Every change which I do in my code, will take one hour to compile and show me an error.
+
+I have to wait as of now, one hour to see if my code os ok or not. And I am only compiling libraries. I never even get to part to compile my own program because I now need to compile 40 librairies in order to compile my app. 
+
+HitHub action's output is so long that in one moment it stops showing new messages and I have to wait until fail happens to see full log in raw. Fuck, the log file is 11.4 MB big and it has 78400 lines of output. hahahahahahahahaha. I am so amaized with my own stupidity. I really can not beleve in this:
+
+![Last build](/assets/article_images/2025-06-19-executable-hunt/output.png)
+
+Fuck me sideways, this shit took a little bit more then a month. (and still not done)
+
+If you think this was hard, no, master private keys was even harder for me but I did it in few months!
+
+
+# I just realized that I compiled libadwaita and now only librsvg is left!!!!!!!!
