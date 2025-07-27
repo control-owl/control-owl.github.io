@@ -607,3 +607,9 @@ RUN $PROJECT_DIR/compile_circus.sh
 ### Finally
 
 I managed to compile all my dependencies statically. Now trying to compile my app. Good luck !
+
+Oh, fuck. I started to compile my app. I am missing vulkan static library. Madafaking dependencies.
+
+So, back to building.
+
+Fuck, I am so fucking angry. FUVCKFPOJ  WFOIHwaoutfuewqOUTOURHGOIWQH ERPWIOHR+´03Q8T4ZUT´4WIHBnlkfx.bv 
