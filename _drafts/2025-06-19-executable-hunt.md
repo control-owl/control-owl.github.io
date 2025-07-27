@@ -12,60 +12,69 @@ image2: /assets/article_images/2025-06-19-executable-hunt/header-mobile.jpg
 
 I spoke few times about measuring my effort. Let's try to capture this moment.
 
-## The start
-
 I am starting now:
 
-### 2025-06-19 at 16:16
+
+## 2025-06-19 at 16:16
 
 I am trying to automate my build process using GitHub CI/CD workflows. Initially, I thought that when I changed something in my app and saved it, it would produce a binary file that users could download and use as the latest version of my app. The whole process must be automated.
 
+I am trying to produce an executable on GitHub. I will start with **Linux MUSL**.
 
-I am trying to produce an executable on GitHub. I started with **Linux MUSL**.
+A few minutes later, I encountered **cross-platform** issues. A lot of them.
 
-A few minutes later, I encountered **cross-platform** issues.
-
-The next step is to put it in a **container** and build it that way.
+The next step is to put the whole process in a **container** and build it that way, but I never used containers.
 
 That's when you get 300 build errors. They were all linked to **static libraries**.
 
 Why did I decide to start with **x86_64-unknown-linux-musl** and then do the rest?
 
-### 2025-06-21
 
-Two days have passed. Still no progress. I wasted the whole day Saturday trying to resolve this.
-In this moment I do not know how to read error logs and what to do with them. 
+## 2025-06-21
 
-### 2025-06-24
+Two days have passed. Still no progress. I wasted the whole Saturday trying to resolve this.
+In this moment I do not know how to read error logs and what to do with them. I need to learn what static build is.
+
+
+## 2025-06-24
+
+I gave up. I will left **MUSL** as my last build since building Linux GNU and macOS is pretty simple task.
 
 It's been five days, and I think I have it.
 
 Yesterday, I woke up late and was almost there, but when I solved one problem, two more popped up.
 
-...
-
 I finally made it! It's working for now in the test environment. It took me 27 tries to get it right.
+
 Is five days too long or too short to resolve something you didn't know about a few days ago?
 
-### 2025-06-25
+**Linux GNU and latest macOS are working!**
 
-I forgot so many things.Yesterday, I was missing a signature file.
+
+## 2025-06-25
+
+I forgot so many things. Yesterday, I was missing a signature file.
 I implemented a GPG key on GitHub that only signs my entire built project and verifies that I am the last person to build it.
+
 If the key is missing, it means that somebody else builded this app and potentially compromised some processes.
 
 If everything is green, then it is trusted!
 
-### 2025-06-28
+I know this has nothing to do with static build, but I forgot about it.
+
+
+## 2025-06-28
 
 It's not finished yet. I am trying to create a basic build for Linux and macOS. As I was writing this, I managed to do so.
 
-Yesterday, I noticed that Rust had been updated. I had to rewrite most of my code because the **println!** and **format!** commands had changed, resulting in more than 300 project errors.
+Yesterday, I noticed that Rust version had been updated. I had to rewrite most of my code because the **println!** and **format!** commands had changed, resulting in more than 300 project errors.
 
 It took me a whole day to fix that and then finalize my GitHub workflows.
 
 I managed to automate build process for **Linux GNU** and **macOS**.
 
 Now, I will try **Linux MUSL**.
+
 If you are unfamiliar with MUSL, it is a type of build in which all dependencies are hard-coded into your app. This is how "**portable**" apps are produced. A portable app can run on any Linux system. For me, this is the perfect app since Linux has so many different distributions, such as Debian, Fedora, and Arch Linux.
 
 I have tried many different ways to resolve the static binary.
@@ -77,7 +86,8 @@ I tried refactoring the code to remove native-tls, but then I couldn't download 
 Now, I am trying **Docker** containers. Honestly, I have never tried Docker before.
 Let's see how long this will take.
 
-### 2025-06-30
+
+## 2025-06-30
 
 The last day of **June**. I'm stuck with static Linux files and Docker containers. I even asked Chappity for help. He avoided answering by telling me to do it with **AppImage**. I said no; I want to compile everything statically and build it without dependencies.
 
@@ -91,7 +101,7 @@ I received this answer: "*Got it—you're committed to building your Rust GTK4 a
 
 This is exactly what I wanted to hear. There's no quick code or workaround; only the realization that **it's possible**. To me, that means I've already done it; I just have to keep trying until the day I succeed.
 
-# It's July
+## It's July
 
 Still nothing. I try every day without stopping when I have time.
 
@@ -111,7 +121,7 @@ I lost a day and a half of my life staring at the monitor and waiting!
 
 ## 2025-07-04
 
-I set up Docker **locally** on my machine. Debugging it online takes time, as does the waiting time. With RustRover, I managed to set up Docker, and it works fine. I expected to build it at least twice as fast as GitHub Workflows, but honestly, I'm slower. Building all the dependencies takes time, and all 12 of my cores go to 100%. Can you imagine how hot the room is after my eight-hour **compiling marathon**? I'm sweating here. I managed to resolve the Pango static library.
+I set up Docker **locally** on my machine. Debugging it online takes time, as does the waiting time. With RustRover, I managed to set up Docker, and it works fine. I expected to build it at least twice as fast as GitHub Workflows, but honestly, I'm slower. Building all the dependencies takes time, and all 12 of my cores go to 100%. Can you imagine how hot the room is after my eight-hour **compiling marathon**? I'm sweating here. I managed to resolve the **Pango** static library.
 
 The first static QR2M dependency is resolved; now, on to the rest:
 
@@ -387,3 +397,184 @@ If you think this was hard, no, master private keys was even harder for me but I
 
 
 # I just realized that I compiled libadwaita and now only librsvg is left!!!!!!!!
+
+## 2025-07-27
+
+Everybody is at sleep, I made a small progress and big degress.
+
+I am back to beginning. I had to divide my Dockerfile in many steps since debugging is hard since I have to wait for one hour to see an error.
+
+Now I build one step and if next one fails than I start from there and not from the beginning.
+
+I am almost done with depandencies. When will I start compiling my app?
+
+```Dockerfile
+FROM rust:alpine AS base_system
+
+LABEL maintainer="control-owl@r-o0-t.wtf" \
+      version="1.0" \
+      description="Build QR2M project with MUSL"
+
+ENV PROJECT_DIR="/home/QR2M"
+WORKDIR $PROJECT_DIR
+
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/v3.22/main" > /etc/apk/repositories && \
+    echo "https://dl-cdn.alpinelinux.org/alpine/v3.22/community" >> /etc/apk/repositories && \
+    apk update && \
+    apk add --no-cache \
+      bash build-base git cmake ninja meson bison pkgconf-dev musl-dev autoconf automake libtool gcc g++
+
+COPY docker/*.sh $PROJECT_DIR
+COPY docker/static_library/*.sh $PROJECT_DIR
+
+RUN chmod +x $PROJECT_DIR/*.sh
+
+# Compiles
+
+
+FROM base_system AS pkgconfig
+
+RUN apk add --no-cache pkgconf-dev zlib-dev
+
+COPY --from=base_system /usr/local /usr/local
+COPY --from=base_system /home/QR2M /home/QR2M
+
+RUN $PROJECT_DIR/00-pkgconf.sh       # Compiles in 8s
+RUN $PROJECT_DIR/00-zlib.sh          # Compiles in 3s
+
+# Compiles
+
+
+FROM base_system AS glib
+
+RUN apk add --no-cache libffi-dev pcre2-dev gettext-dev pcre2-dev gperf texinfo
+
+COPY --from=pkgconfig /usr/local /usr/local
+COPY --from=pkgconfig $PROJECT_DIR $PROJECT_DIR
+
+RUN $PROJECT_DIR/01-gettext.sh       #| Compiles in 475s
+RUN $PROJECT_DIR/01-libffi.sh        #| Compiles in 20s
+RUN $PROJECT_DIR/01-pcre2.sh         #| Compiles in 26s
+RUN $PROJECT_DIR/01-glib.sh          #| Compiles in 69s
+
+# Compiles
+
+
+FROM base_system AS x11
+
+RUN apk add --no-cache libxau-dev libxdmcp-dev libxcb-dev libx11-dev libxrender-dev libxext-dev xcb-util-dev
+
+COPY --from=glib /usr/local /usr/local
+COPY --from=glib $PROJECT_DIR $PROJECT_DIR
+
+RUN $PROJECT_DIR/02-xorgproto.sh     #| Compiles in 4s
+RUN $PROJECT_DIR/02-libxau.sh        #| Compiles in 19s
+RUN $PROJECT_DIR/02-libxdmcp.sh      #| Compiles in 28s
+RUN $PROJECT_DIR/02-libxcb.sh        #| Compiles in 32s
+RUN $PROJECT_DIR/02-libx11.sh        #| Compiles in 67s
+RUN $PROJECT_DIR/02-libxrender.sh    #| Compiles in 26s
+RUN $PROJECT_DIR/02-libxext.sh       #| Compiles in 30s
+
+# Compiles
+
+
+FROM base_system AS fontconfig
+
+RUN apk add --no-cache expat-dev bzip2-dev freetype-dev fontconfig-dev zlib-dev py3-pytest
+
+COPY --from=x11 /usr/local /usr/local
+COPY --from=x11 $PROJECT_DIR $PROJECT_DIR
+
+RUN $PROJECT_DIR/03-libexpat.sh      #| Compiles in 27s
+RUN $PROJECT_DIR/03-libbz2.sh        #| Compiles in 6s
+RUN $PROJECT_DIR/03-freetype.sh      #| Compiles in 26s
+RUN $PROJECT_DIR/03-fontconfig.sh    #| Compiles in 29s
+
+# Compiles
+
+
+FROM base_system AS cargo_c
+
+# can be trimmed
+RUN apk add --no-cache zlib-dev openssl-dev nghttp2-dev curl-dev openssl-libs-static \
+    appstream-dev appstream-glib-dev dbus desktop-file-utils docbook-xml docbook-xsl gettext-dev gettext-libs \
+    gnu-libiconv-dev gnu-libiconv-libs itstool po4a tzdata
+
+COPY --from=fontconfig /usr/local /usr/local
+COPY --from=fontconfig $PROJECT_DIR $PROJECT_DIR
+
+RUN $PROJECT_DIR/04-openssl.sh       #| Compiles in 305s
+RUN $PROJECT_DIR/04-nghttp2.sh       #| Compiles in 35s
+RUN $PROJECT_DIR/04-curl.sh          #| Compiles in 69s
+RUN $PROJECT_DIR/04-cargo-c.sh       #| Compiles in 479s
+
+# Compiles
+
+
+FROM base_system AS appstream
+
+RUN apk add --no-cache \
+    zlib-dev libpng-dev libxml2-dev tiff-dev libjpeg-turbo-dev graphene-dev \
+    fribidi-dev libeconf-dev pixman-dev brotli-dev xz-dev libunistring-dev po4a \
+    glib-dev pcre2-dev libffi-dev gettext-dev libepoxy-dev appstream-dev gdk-pixbuf-dev texinfo
+
+COPY --from=cargo_c /usr/local /usr/local
+COPY --from=cargo_c $PROJECT_DIR $PROJECT_DIR
+
+RUN $PROJECT_DIR/05-libpng.sh        #| Compiles in 15s
+RUN $PROJECT_DIR/05-libxml2.sh       #| Compiles in 41s
+RUN $PROJECT_DIR/05-libtiff.sh       #| Compiles in 32s
+RUN $PROJECT_DIR/05-graphene.sh      #| Compiles in 5s
+RUN $PROJECT_DIR/05-fribidi.sh       #| Compiles in 8s
+RUN $PROJECT_DIR/05-libeconf.sh      #| Compiles in 12s
+RUN $PROJECT_DIR/05-pixman.sh        #| Compiles in 21s
+RUN $PROJECT_DIR/05-libjpeg-turbo.sh #| Compiles in 23s
+RUN $PROJECT_DIR/05-libepoxy.sh      #| Compiles in 25s
+RUN $PROJECT_DIR/05-brotli.sh        #| Compiles in 28s
+RUN $PROJECT_DIR/05-xz.sh            #| Compiles in 41s
+RUN $PROJECT_DIR/05-libunistring.sh  #| Compiles in 354s
+RUN $PROJECT_DIR/05-appstream.sh     #| Compiles in 29s
+RUN $PROJECT_DIR/05-gdk-pixbuf.sh    #| fail
+
+# Testing
+
+
+FROM base_system AS gtk4
+
+RUN apk add --no-cache \
+    glib-dev pcre2-dev libffi-dev gettext-dev zlib-dev \
+    libx11-dev libxext-dev libxrender-dev libxrandr-dev libxfixes-dev libxcursor-dev libxi-dev \
+    libxau-dev libxdmcp-dev libxcb-dev \
+    expat-dev bzip2-dev freetype-dev fontconfig-dev \
+    cairo-dev pango-dev harfbuzz-dev libepoxy-dev gdk-pixbuf-dev librsvg-dev \
+    gtk4.0-dev libadwaita-dev
+
+COPY --from=appstream /usr/local /usr/local
+COPY --from=appstream $PROJECT_DIR $PROJECT_DIR
+
+RUN $PROJECT_DIR/06-cairo.sh         #| Compiles in 30s
+RUN $PROJECT_DIR/06-pango.sh         #| Compiles in 17s
+RUN $PROJECT_DIR/06-harfbuzz.sh      #| Compiles in 104s
+RUN $PROJECT_DIR/06-gtk4.sh          #| Compiles in 232s
+
+
+
+FROM base_system AS libadwaita
+
+RUN apk add --no-cache librsvg-dev libadwaita-dev
+
+COPY --from=gtk4 /usr/local /usr/local
+COPY --from=gtk4 $PROJECT_DIR $PROJECT_DIR
+
+RUN $PROJECT_DIR/07-libadwaita.sh    #| Compiles in 45s
+RUN $PROJECT_DIR/07-librsvg.sh       #| Missing pkg-config
+
+
+FROM base_system AS compile_circus
+
+COPY --from=libadwaita /usr/local /usr/local
+COPY --from=libadwaita $PROJECT_DIR $PROJECT_DIR
+
+RUN $PROJECT_DIR/compile-circus.sh
+
+```
