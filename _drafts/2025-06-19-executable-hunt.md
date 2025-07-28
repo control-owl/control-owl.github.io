@@ -613,3 +613,16 @@ Oh, fuck. I started to compile my app. I am missing vulkan static library. Madaf
 So, back to building.
 
 Fuck, I am so fucking angry. FUVCKFPOJ  WFOIHwaoutfuewqOUTOURHGOIWQH ERPWIOHR+´03Q8T4ZUT´4WIHBnlkfx.bv 
+
+
+## 2025-07-28
+
+I compiled vulkan headers and vulkan loader yesterday. I managed to start compile my circus but...
+
+On GitHub workflows, I got an error:
+
+```Log
+System.IO.IOException: No space left on device 
+```
+
+Now I have to re-invent everything. God damn! 
