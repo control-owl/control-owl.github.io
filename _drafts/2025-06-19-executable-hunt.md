@@ -309,28 +309,28 @@ RUN $PROJECT_DIR/libadwaita.sh    #| QR2M               |  |
 RUN chmod +x $PROJECT_DIR/compile-circus.sh && $PROJECT_DIR/compile-circus.sh
 ```
 
-I am exahausted from this constant testing. I am not at 1000th GitHub workflow.
+I am exhausted from this constant testing. I am not on my 1,000th GitHub workflow.
 
-I still do not want to give up. I still have few more hours until I can say that I am trying for a month to compile my app with MUSL.
+I still don't want to give up. I have a few more hours until I can say that I have spent a month trying to compile my app with MUSL.
 
 ## 2025-07-20
 
 Today is a sad day. A very sad day.
 
-I called my father to inform him that my friend died.
+I called my father to tell him that my friend had died.
 
-He drove a tractor and he lost control, tractor felt on him and killed him. RIP Josip, 36.
-He was a son of my father's friend.
+He was driving a tractor when he lost control and the tractor fell on him, killing him. Rest in peace, Josip.
+He was the son of a friend of my father's.
 
-My father told me he has a cancer. Prostate. I am sad. No words, just sad feelings. Do not know what to do. He is 1000km away from me. My grad-father had it also. He died because of it. I remember. A yellow man. My last images of him.
+My father told me he had cancer. Prostate cancer. I am sad. I have no words, just sad feelings. I don't know what to do. He lives 1,000 km away. My grandfather had it too. He died because of it. I remember. He was a yellow man. Those are my last images of him.
 
 
 **For my father I will do it. I will build MUSL in his honor!**
 
 
-I did not sleep very well tonight, staid almost until 2 AM awake.
+I did not sleep very well tonight. I stayed awake until almost 2 a.m.
 
-Manged to did some progress:
+I managed to make some progress:
 
 ```Dockerfile
 # -.-. --- .--. -.-- .-. .. --. .... - DEPENDENCIES -.-. --- .--. -.-- .-. .. --. .... -
@@ -381,32 +381,32 @@ RUN chmod +x $PROJECT_DIR/compile-circus.sh && $PROJECT_DIR/compile-circus.sh
 
 ## 2025-07-22
 
-I made a huge progress yesterady late. I am now left to build librsvg and libadwaita.
+I made huge progress yesterday evening. Now, I just have to build librsvg and libadwaita.
 
-I think I will get librsvg in few more tries. Debugging code is now geting extreme hard. Every change which I do in my code, will take one hour to compile and show me an error.
+I think I will get librsvg in a few more tries. Debugging the code is getting extremely difficult. Every change I make to my code takes an hour to compile and show an error.
 
-I have to wait as of now, one hour to see if my code os ok or not. And I am only compiling libraries. I never even get to part to compile my own program because I now need to compile 40 librairies in order to compile my app. 
+For now, I have to wait an hour to see if my code is okay. And I'm only compiling libraries. I never even get to the point of compiling my own program because I now need to compile 40 libraries in order to compile my app.
 
-HitHub action's output is so long that in one moment it stops showing new messages and I have to wait until fail happens to see full log in raw. Fuck, the log file is 11.4 MB big and it has 78400 lines of output. hahahahahahahahaha. I am so amaized with my own stupidity. I really can not beleve in this:
+GitHub's output is so long that it stops showing new messages at one point, and I have to wait for an error to occur to see the full log in raw. The log file is 11.4 MB and has 78,400 lines of output! I am amazed by my own stupidity. I really cannot believe this.
 
 ![Last build](/assets/article_images/2025-06-19-executable-hunt/output.png)
 
 Fuck me sideways, this shit took a little bit more then a month. (and still not done)
 
-If you think this was hard, no, master private keys was even harder for me but I did it in few months!
+If you think this was hard, mastering private keys was even harder for me, but I did it in a few months!
 
 
 # I just realized that I compiled libadwaita and now only librsvg is left!!!!!!!!
 
 ## 2025-07-27
 
-Everybody is at sleep, I made a small progress and big degress.
+Everyone is asleep. I made some progress, but also took a big step back.
 
-I am back to beginning. I had to divide my Dockerfile in many steps since debugging is hard since I have to wait for one hour to see an error.
+I'm back to square one. Since debugging is difficult because I have to wait an hour to see an error, I had to divide my Dockerfile into many steps.
 
-Now I build one step and if next one fails than I start from there and not from the beginning.
+Now, I build one step at a time. If the next step fails, I start from there and not from the beginning.
 
-I am almost done with depandencies. When will I start compiling my app?
+I am almost done with dependencies. When will I start compiling my app?
 
 ```Dockerfile
 FROM rust:alpine AS base_system
@@ -606,23 +606,34 @@ RUN $PROJECT_DIR/compile_circus.sh
 
 ### Finally
 
-I managed to compile all my dependencies statically. Now trying to compile my app. Good luck !
+I managed to compile all my dependencies statically. Now I'm trying to compile my app. Good luck!
 
-Oh, fuck. I started to compile my app. I am missing vulkan static library. Madafaking dependencies.
+Oh, fuck! I started to compile my app. I'm missing the Vulkan static library. Damn dependencies!
 
-So, back to building.
+Back to building.
 
-Fuck, I am so fucking angry. FUVCKFPOJ  WFOIHwaoutfuewqOUTOURHGOIWQH ERPWIOHR+´03Q8T4ZUT´4WIHBnlkfx.bv 
+I am so fucking angry. Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck! Fuck
 
 
 ## 2025-07-28
 
-I compiled vulkan headers and vulkan loader yesterday. I managed to start compile my circus but...
+Yesterday, I compiled the Vulkan headers and loader. I managed to start compiling my Circus, but...
 
-On GitHub workflows, I got an error:
+On GitHub workflows, I received an error:
 
 ```Log
 System.IO.IOException: No space left on device 
 ```
 
-Now I have to re-invent everything. God damn! 
+Now, I have to reinvent everything. God damn it!
+
+Okay, okay. I'm almost there. I'm having a problem with OpenSSL on my laptop, so I think I need to rebuild my containers.
+
+I'm compiling my application with MUSL. It's something I never dreamed would happen. I am so happy! 
+
+
+Actually, I'm exhausted from the effort. I still don't understand what I did. Maybe I'd be proud of myself if I could share it with anyone. Nobody understands what I do at night. What is this for? For whom?
+
+This is for my children. This is for everyone!
+
+This is for the whole world to use without any boundaries, limitations, or dependencies, and it will be free forever.
