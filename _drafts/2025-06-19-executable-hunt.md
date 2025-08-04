@@ -637,3 +637,21 @@ Actually, I'm exhausted from the effort. I still don't understand what I did. Ma
 This is for my children. This is for everyone!
 
 This is for the whole world to use without any boundaries, limitations, or dependencies, and it will be free forever.
+
+
+## 2025-08-04
+
+August is here. Fuck off. No progress, only degress. Yesterday I commented-out librsvg just to see if gtk4 will compile, and apperently gtk4 can build librsvg as a subproject and I do not need to build it separately.
+
+I went insane. So... Now I need more libraries. I created a spreed-sheet document since this is getting big as Wikipedia. I do not know how much more. WTF? A sheet for my app :D
+
+# Finals
+
+What I did?
+
+ - Created an app which runs on all Linux distros without anything needed
+ - I learned how to patch files
+
+How much effort?
+
+ - 40 days and counting
