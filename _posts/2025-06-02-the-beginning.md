@@ -3,8 +3,7 @@ layout: post
 title: "The beginning"
 date: 2025-06-01 00:00:00
 categories: blog post
-tags:
-  - featured
+# tags: featured
 image: /assets/article_images/2025-06-02-the-beginning/header.jpg
 image2: /assets/article_images/2025-06-02-the-beginning/header-mobile.jpg
 ---
