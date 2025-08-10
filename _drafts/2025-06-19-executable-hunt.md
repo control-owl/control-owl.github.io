@@ -645,6 +645,76 @@ August is here. Fuck off. No progress, only degress. Yesterday I commented-out l
 
 I went insane. So... Now I need more libraries. I created a spreed-sheet document since this is getting big as Wikipedia. I do not know how much more. WTF? A sheet for my app :D
 
+
+## 2025-08-10
+
+Finally some progress. I managed to compile all ly libraries. 53 of them!
+
+```Config
+pkgconf
+zlib
+libffi
+pcre2
+glib
+gettext
+xorgproto
+xorg-macros
+libxau
+libxdmcp
+libxcb
+libx11
+libxrender
+libxext
+libexpat
+libbz2
+freetype
+fontconfig
+openssl
+nghttp2
+curl
+cargo-c
+libpng
+libxml2
+libjpeg-turbo
+libtiff
+graphene
+fribidi
+libeconf
+pixman
+libepoxy
+brotli
+xz
+libunistring
+libyaml
+appstream
+gdk-pixbuf
+cairo
+harfbuzz
+pango
+libxkbcommon
+libxrandr
+vulkan
+libxi
+libxfixes
+libxcursor
+libxdamage
+libxinerama
+libdrm
+libsass
+libxcomposite
+gtk4
+libadwaita
+```
+
+I am trying whole day to compile my app and with every try I add some missing RUSTFLAGS:
+
+```bash
+export RUSTFLAGS="-C target-feature=+crt-static -C link-arg=-static -C link-arg=-L$STATIC_DIR/lib -C link-arg=-L$STATIC_DIR/lib64 -C link-arg=-L$STATIC_DIR/share -C link-arg=-lappstream -C link-arg=-ladwaita-1 -C link-arg=-lgtk-4 -C link-arg=-lgdk_pixbuf-2.0 -C link-arg=-lcairo -C link-arg=-lpango-1.0 -C link-arg=-lpangocairo-1.0 -C link-arg=-lharfbuzz -C link-arg=-lharfbuzz-subset -C link-arg=-lfribidi -C link-arg=-lfontconfig -C link-arg=-lfreetype -C link-arg=-lxml2 -C link-arg=-lz -C link-arg=-lpng16 -C link-arg=-ltiff -C link-arg=-ljpeg -C link-arg=-lxkbcommon -C link-arg=-lX11 -C link-arg=-lXext -C link-arg=-lXrender -C link-arg=-lXrandr -C link-arg=-lXi -C link-arg=-lXfixes -C link-arg=-lXcursor -C link-arg=-lXdamage -C link-arg=-lXinerama -C link-arg=-lXcomposite -C link-arg=-lxcb -C link-arg=-lxcb-render -C link-arg=-lxcb-shm -C link-arg=-lXau -C link-arg=-lXdmcp -C link-arg=-lpixman-1 -C link-arg=-lglib-2.0 -C link-arg=-lgobject-2.0 -C link-arg=-lgio-2.0 -C link-arg=-lgmodule-2.0 -C link-arg=-lffi -C link-arg=-lpcre2-8 -C link-arg=-lepoxy -C link-arg=-lgraphene-1.0 -C link-arg=-lssl -C link-arg=-lcrypto -C link-arg=-lcurl -C link-arg=-lnghttp2 -C link-arg=-lbz2 -C link-arg=-lbrotlidec -C link-arg=-lbrotlicommon -C link-arg=-llzma -C link-arg=-lunistring -C link-arg=-lyaml -C link-arg=-leconf -C link-arg=-latomic -C link-arg=-lstdc++ -C link-arg=-lm -C link-arg=-lintl -C link-arg=-lexpat -C link-arg=-ldrm -C link-arg=-lsass"
+```
+
+There is no end.
+
+
 # Finals
 
 What I did?
