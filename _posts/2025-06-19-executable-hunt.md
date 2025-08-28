@@ -54,7 +54,7 @@ Is five days too long or too short to resolve something you didn't know about a 
 ## 2025-06-25
 
 I forgot so many things. Yesterday, I was missing a signature file.
-I implemented a GPG key on GitHub that only signs my entire built project and verifies that I am the last person to build it.
+I implemented a GPG key on GitHub that signs my entire built project and verifies that I am the last person to build it.
 
 If the key is missing, it means that somebody else builded this app and potentially compromised some processes.
 
@@ -735,7 +735,14 @@ What I did?
 
 How much effort?
 
- - For me it seams forever
+ - For me it seams like forever
 
 
- Plan is to reduce all deps, and to write everything by myself.
+ Plan is to reduce all deps, and to write everything by myself. 
+
+ I could already do it, if I did not start this MUSL hund without any proper knowledge how c compilers works.
+
+ I still have no idea, and honestly I do not care. I write everything my mayself, and that's it.
+
+
+ Let's start new session: **no-deps-no-more**
