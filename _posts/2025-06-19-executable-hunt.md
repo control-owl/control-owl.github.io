@@ -717,13 +717,25 @@ There is no end. I created a Calc file:
 ![Last build](/assets/article_images/2025-06-19-executable-hunt/calc.png)
 
 
+## 2025-08-28
+
+I fucking give up. So tired of fucking waiting to compile gnulib for at least 100 time. I have so many dependencies and I need to compile them all. 
+
+Next step is to reduce all my cargo deps to zero!
+
+MUSL, go F yourself!
+
 # Finals
 
 What I did?
 
  - Created an app which runs on all Linux distros without anything needed
  - I learned how to patch files
+ - Created a new plan!
 
 How much effort?
 
- - 40 days and counting
+ - For me it seams forever
+
+
+ Plan is to reduce all deps, and to write everything by myself.
