@@ -19,3 +19,15 @@ So, I searched for a alternative to replace gtk4 with something what exists on a
 I think I will try to do this with Web Assembly and Wry
 
 
+# Good bye GTK
+
+The day has come, I will replace whole GTK4 GUI with a new one, egui.
+
+After researching many GUIs, I think egui is the one, since it is written in Rust and also supports WASM.
+
+But this [website](https://www.egui.rs/#demo) blow my mind, and it won!
+
+GTK4 was really pain in the ass. Compiling it with MUSL was...exhausting...intensive. I hate it. 3 months of work and I did nothing.
+
+Let's hope this will not take 3 months without any success. 
+

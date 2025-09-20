@@ -309,7 +309,7 @@ RUN $PROJECT_DIR/libadwaita.sh    #| QR2M               |  |
 RUN chmod +x $PROJECT_DIR/compile-circus.sh && $PROJECT_DIR/compile-circus.sh
 ```
 
-I am exhausted from this constant testing. I am not on my 1,000th GitHub workflow.
+I am exhausted from this constant testing. I am now on my 1,000th GitHub workflow.
 
 I still don't want to give up. I have a few more hours until I can say that I have spent a month trying to compile my app with MUSL.
 
@@ -648,7 +648,7 @@ I went insane. So... Now I need more libraries. I created a spreed-sheet documen
 
 ## 2025-08-10
 
-Finally some progress. I managed to compile all ly libraries. 53 of them!
+Finally some progress. I managed to compile all my libraries. 53 of them!
 
 ```Config
 pkgconf
@@ -729,7 +729,7 @@ MUSL, go F yourself!
 
 What I did?
 
- - Created an app which runs on all Linux distros without anything needed
+ - ~~Created an app which runs on all Linux distros without anything needed~~
  - I learned how to patch files
  - Created a new plan!
 
@@ -740,9 +740,9 @@ How much effort?
 
  Plan is to reduce all deps, and to write everything by myself. 
 
- I could already do it, if I did not start this MUSL hund without any proper knowledge how c compilers works.
+ I could already do it, if I did not start this MUSL hund without any proper knowledge how C compilers works.
 
- I still have no idea, and honestly I do not care. I write everything my mayself, and that's it.
+ I still have no idea, and honestly I do not care. I write everything my myself, and that's it.
 
 
  Let's start new session: **no-deps-no-more**
