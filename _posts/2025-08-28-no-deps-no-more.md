@@ -53,3 +53,9 @@ When I managed to do it, fricking, libadwaita did not wanted to compile. Standar
 With egui, I do not need to download anything extra, nor I have to compile nothing. Everything is in cargo and proxy allows it. 
 
 I think this will go even better as previous GUI, because of integrated GUi in Rust.
+
+---
+
+## November 7, 2025
+
+EU chat law. WTF ??? Humanity lost its dignity. So sad :(
