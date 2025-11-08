@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Executable hunt"
+title: "No deps no more"
 date: 2025-08-28 18:36:00
 categories: blog post
 # tags: featured
