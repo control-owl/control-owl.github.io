@@ -31,8 +31,8 @@ disqus: control-owl
 # social icons and sharing options
 social:
   - icon:	github
-    url:	https://github.com/control-owl/qr2m
-    desc:	QR2M
+    url:	https://github.com/control-owl
+    desc:	GitHub
     share_url:
     share_title:
     share_link:
