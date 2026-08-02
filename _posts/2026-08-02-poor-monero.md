@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Poor Monero"
-date: 2026-08-02 14:46:00
+date: 2026-08-02 00:00:00
 categories: blog post
 # tags: featured
 image: /assets/article_images/2026-08-02-poor-monero/header.jpg
