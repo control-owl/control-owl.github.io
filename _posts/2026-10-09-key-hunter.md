@@ -3,9 +3,9 @@ layout: post
 title: "Key-Hunter"
 date: 2026-10-09 00:00:00
 categories: blog post
-tags: featured
-image: /assets/article_images/2026-10-09-key-hunter/header.jpg
-image2: /assets/article_images/2026-10-09-key-hunter/header-mobile.jpg
+# tags: featured
+image: /assets/article_images/2026-10-09-key-hunter/header.png
+image2: /assets/article_images/2026-10-09-key-hunter/header-mobile.png
 ---
 
 # Intro
@@ -361,4 +361,7 @@ I accept almost any crypto as a payment, make me an offer, I will think about if
 
 # Latest preview
 
-![Version 1.1.0](/assets/article_images/2026-10-09-key-hunter/1.1.0-release.mp4)
+<video controls>
+  <source src="/assets/article_images/2026-10-09-key-hunter/1.1.0-release.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
