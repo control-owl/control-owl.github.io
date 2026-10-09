@@ -54,11 +54,11 @@ So I had to change my tactics.
 
 # eQ and Monero
 
-Since writing CPU miner will require another task, and that is writing support for Monero in (eQ)[eq], I switched to add wallet support and then to start CPU miner.
+Since writing CPU miner will require another task, and that is writing support for Monero in [eQ][eq], I switched to add wallet support and then to start CPU miner.
 
 It took me more than a week to gather all the needed test vectors and already generated keys to start producing my own code. Since every time I mention Monero by AI, it did not want to properly answer me (it **lied** to me that I had a proper answer even when I said it and proved that it was not), I had to obfuscate some of the variable names and functions just to ask if I properly derived my code.
 
-My problem is not if I can write code, I can. My problem is when I click generate wallet in (eQ)[eq], and when I see that the Monero address is generated, I have to verify that the generated keys are properly derived or I messed something up. This is 99% of all my problems. I need to find on the internet whole derivation keys in order to compare them with mine. But finding on the internet exactly what I need are sometimes days of searching. To shorten my research time, I sometimes ask AI.
+My problem is not if I can write code, I can. My problem is when I click generate wallet in [eQ][eq], and when I see that the Monero address is generated, I have to verify that the generated keys are properly derived or I messed something up. This is 99% of all my problems. I need to find on the internet whole derivation keys in order to compare them with mine. But finding on the internet exactly what I need are sometimes days of searching. To shorten my research time, I sometimes ask AI.
 
 
 # BIP39 seed to Monero
@@ -78,5 +78,5 @@ Long live freedom. Freedom of speech and freedom for all !!!
 
 
 [xmrig]:     https://github.com/xmrig/xmrig
-[coinomi]:   https://coinomi.github.io/tools/bip39/
+[coinomi]:   https://coinomi.github.io/tools/bip39
 [eQ]:        https://github.com/control-owl/eQ
