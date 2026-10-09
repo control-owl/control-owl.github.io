@@ -266,7 +266,7 @@ For now the GUI is basic. Can only select device and mode. Later it grew a lot.
 
 ## Graph
 
-For now I could only see a global speed in my GUI and this was sometimes bothering me because I had no history of speed, so I implemented a new graph to show me my speed. For now it was basic since I was still learning how to implement the **graph in EGUI** at all. A few more days after and I could see the **live and the global speed** of my solver. With the graph and GUI implementation I decided to start with version **1.0.0**, since everything is working **stable**. I can confirm that my math is correct by setting some test keys and resolving every one of them. There was no mistake in math, there was only heavy math, which I simplified and soon my speed was 158M keys/s.
+For now I could only see a global speed in my GUI and this was sometimes bothering me because I had no history of speed, so I implemented a new graph to show me my speed. For now it was basic since I was still learning how to implement the **graph in EGUI** at all. A few more days after and I could see the **live and the global speed** of my solver. With the graph and GUI implementation I decided to start with version **1.0.0**, since everything is working **stable**. I can confirm that my math is correct by setting some test keys and resolving every one of them. There was no mistake in math, there was only heavy math, which I simplified and soon my speed was `158M keys/s`.
 
 
 ## Kernels - the real work
@@ -301,7 +301,7 @@ Now I had a collection of kernels:
 
 That is **15 kernels**. Most public solvers have one. I wrote all of them myself, tested them, fixed bugs in the field arithmetic, fixed wrong point conversions, fixed race conditions in the allocator, fixed wrong speed reporting, fixed GPU thermal throttling during long benchmarks.
 
-As you can see they have a different maximum speed but they also draw different **power** from the GPU. Some of them are heavy for the GPU and draw maximum wattage from it, some of them are easy and GPU usage can be lower.
+As you can imagin they have a different maximum speed but they also draw different **power** from the GPU. Some of them are heavy for the GPU and draw maximum wattage from it, some of them are easy and GPU usage can be lower.
 
 PTX files are embedded at compile time with the include_dir crate. Only the files that actually exist are baked in - missing ones never break the build. Kernel selection is done through a KernelRegistry + KernelType enum (Linear / Endo / Glv and the hybrids). GUI dropdowns for kernel type, size and parallel-keys appear only when device = GPU.
 
@@ -319,11 +319,11 @@ Right now this is the latest feature in my app: **Benchmarking**.
 
 ### How-to-benchmark
 
-You start the app, select GPU mode and a new button shows. Select if you want to benchmark all kernels or just one, the one selected in the drop-down menu. Regardless, the process will start with the first kernel and do **30 different tests** by setting different block, grid, chunk size and parallel keys to detect which one of the combinations will give you the highest speed. If all kernels are selected this will take some time. 30 tests per kernel times 15 kernels times 3 second test per parameter... That’s why I implemented an option to select how long to test each parameter ranging from 1 to 10 seconds. One second test is not really a correct measurement and 10 seconds is maybe too long to wait. Let’s say 5 seconds should satisfy our benchmarking.
+You start the app, select GPU mode and a new button shows. Select if you want to benchmark all kernels or just one, the one selected in the drop-down menu. Regardless, the process will start with the first kernel and do **88 different tests** by setting different block, grid, chunk size and parallel keys to detect which one of the combinations will give you the highest speed. If all kernels are selected this will take some time. 30 tests per kernel times 15 kernels times 3 second test per parameter... That’s why I implemented an option to select how long to test each parameter ranging from 1 to 10 seconds. One second test is not really a correct measurement and 10 seconds is maybe too long to wait. Let’s say 5 seconds should satisfy our benchmarking.
 
 After the benchmark is done, the program will select the fastest kernel and the fastest combination of all parameters to get the highest speed possible. Auto-tuned launch configuration based on GPU SM count is also there.
 
-Right now we have `key-hunter version 1.1.0 with 182M keys/s` on a GTX 1650.
+Right now we have `key-hunter version 1.1.0 with 184M keys/s` on a GTX 1650.
 
 <video controls>
   <source src="/assets/article_images/2026-10-09-key-hunter/1.1.0-benchmark.mp4" type="video/mp4">
