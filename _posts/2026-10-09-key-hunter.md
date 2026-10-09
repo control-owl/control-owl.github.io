@@ -193,14 +193,14 @@ In 2017, the Bitcoin in addresses **161-256** was moved to addresses in the lowe
 
 ## cpu-only
 
-Rust or not, here we go again... First line I wrote almost a year ago. I had no idea what CUDA (NVIDIA’s programming platform for GPUs) was back then. I heard about CUDA drivers but that was it. So I started with CPU mode only. On 20th of December 2025, just before Christmas time, I uploaded the first part of the code on GitHub. First commit: **cpu-only.** Multi-threaded with Rayon, using all available cores. Speed was in the range of **==1-2K (thousand) keys per second==**. And as I was finishing my CPU mode, I discovered CUDA for the first time. I found a crate **cust** and by reading what it does I realized that I wasted my time with CPU mode and I should already have a GPU mode. So let’s start again.
+Rust or not, here we go again... First line I wrote almost a year ago. I had no idea what CUDA (NVIDIA’s programming platform for GPUs) was back then. I heard about CUDA drivers but that was it. So I started with CPU mode only. On 20th of December 2025, just before Christmas time, I uploaded the first part of the code on GitHub. First commit: **cpu-only.** Multi-threaded with Rayon, using all available cores. Speed was in the range of `1-2K (thousand) keys per second`. And as I was finishing my CPU mode, I discovered CUDA for the first time. I found a crate **cust** and by reading what it does I realized that I wasted my time with CPU mode and I should already have a GPU mode. So let’s start again.
 
 
 ## cuda c++
 
 Let’s learn a new programming language, why not. I never used C nor C++. But by looking for the first time at its syntax, it reminds me of Rust. At least it looks to me like that. So the transition, or learning curve, was not so steep. First thing I looked for on the internet was if there is something similar with **Rust and CUDA**, but I found nothing. At the end I decided to write my own kernel (the small program that runs on the GPU). I took from BitCrack two files which I could never write better myself: **sha256.cuh** and **ripemd160.cuh**. (MIT License)
 
-Then I started to write this kernel by myself. I learned about **PTX** (the low-level assembly language for NVIDIA GPUs), wrote some basic functions and tried to resolve one test key which I set up. It took me a week until I managed to resolve my test key. Speed of the kernel was almost **==2M (million) keys per second==**. Comparing to CPU mode where speed was in the range of 1-2K keys per second, this was a **HUGE** progress. This day ended up with almost **==3M speed==**.
+Then I started to write this kernel by myself. I learned about **PTX** (the low-level assembly language for NVIDIA GPUs), wrote some basic functions and tried to resolve one test key which I set up. It took me a week until I managed to resolve my test key. Speed of the kernel was almost `2M (million) keys per second`. Comparing to CPU mode where speed was in the range of 1-2K keys per second, this was a **HUGE** progress. This day ended up with almost `3M speed`.
 
 I had to learn modular arithmetic on the GPU, field operations for secp256k1, point addition and doubling in different coordinate systems. Every small mistake in the kernel meant the whole search was wrong. Debugging PTX is not fun.
 
@@ -218,13 +218,13 @@ I implemented logic to save progress to a file. The allocator is central and cra
 
 ## Happy New Year 2026
 
-Children are sleeping, wife also. Not me. I am writing my kernel as this is the last day to submit it. I managed to repair what needed to be repaired. Managed to restore parts of my missing code. A few days later we are breaking all records. My speed is around **==6M keys/s==**. PCG is implemented back again.
+Children are sleeping, wife also. Not me. I am writing my kernel as this is the last day to submit it. I managed to repair what needed to be repaired. Managed to restore parts of my missing code. A few days later we are breaking all records. My speed is around `6M keys/s`. PCG is implemented back again.
 
 In the first 2026 week, I managed to create a stable code so I added a **MIT license** to my project. BitCrack is also MIT so why not we also.
 
-Code was uploaded to GitHub on 7th January 2026 with license MIT and at that moment my speed is **==8M keys/s==**. Few hours later we are on **==10M==**, few moments later we are on **==50 million keys per second==**. On that day I went sleeping with record **==134M keys/s==**. Next day I realized this was a fake speed and I was doing improper math. So back to **==50M keys/second==**.
+Code was uploaded to GitHub on 7th January 2026 with license MIT and at that moment my speed is `8M keys/s`. Few hours later we are on `10M`, few moments later we are on `50 million keys per second`. On that day I went sleeping with record `134M keys/s`. Next day I realized this was a fake speed and I was doing improper math. So back to `50M keys/second`.
 
-A day later and a new record has been broken. **==140M keys per second==**. I am publishing key-hunter version 0.5.0 with record speed of **==144M keys/s==**. Whole January I tried to tweak and tune all functions to get more speed and my record was **==147M keys/s==**. We are done for now. I did not have any more knowledge to increase speed at all. Every change was reducing my speed and I was finding nothing to help me.
+A day later and a new record has been broken. `140M keys per second`. I am publishing key-hunter version 0.5.0 with record speed of `144M keys/s`. Whole January I tried to tweak and tune all functions to get more speed and my record was `147M keys/s`. We are done for now. I did not have any more knowledge to increase speed at all. Every change was reducing my speed and I was finding nothing to help me.
 
 At this point I am using Jacobian math (a way to represent elliptic curve points that makes the calculations faster) to represent my points and do the scalar math. I also started counting exact modular multiplications (M) and squarings (S) in every kernel with a small **Python** script so I could compare arithmetic volume, not only raw keys/s.
 
@@ -237,7 +237,7 @@ Right now I am using **Rust** for host app, I compile my **C++** code into **ass
 
 # New try
 
-Months have passed by. It is **September 2026**. My app is still in **terminal** mode. It should run on all major OSes but I am testing it on **Linux only**. I am still using **cust** to run the CUDA kernel on my GPU. I optimized some u128 variables, converted them to u64 and managed to increase my speed to **==164M keys/s==**. I do not know why but I really want to see some other number than 1XX. I think I saw somewhere on a forum that my **GPU NVIDIA GeForce GTX 1650** should have speed of **430M keys/s**, and I was going in this direction. There is no stopping.
+Months have passed by. It is **September 2026**. My app is still in **terminal** mode. It should run on all major OSes but I am testing it on **Linux only**. I am still using **cust** to run the CUDA kernel on my GPU. I optimized some u128 variables, converted them to u64 and managed to increase my speed to `164M keys/s`. I do not know why but I really want to see some other number than 1XX. I think I saw somewhere on a forum that my **GPU NVIDIA GeForce GTX 1650** should have speed of **430M keys/s**, and I was going in this direction. There is no stopping.
 
 Between February and September, I focused only on the eQ app but I was running my solver non-stop on my laptop. Months of solving and still I am below **0%** of the possible range. This bothered me so much. Since I did not know how they got 430M keys per second, I was thinking that my **Jacobian kernel** is maybe the wrong one, so I started to learn about new coordinate systems in ECC (Elliptic Curve Cryptography) math.
 
@@ -246,7 +246,7 @@ This broke my mind. Have you ever seen these functions? I have not. **Jacobian**
 
 ## Endomorphism
 
-WTF is this endomorphism? It seems that you can represent one private key easily and cheaply with 5 more points which are somehow mathematically related to the original private key. All what I understood was "**cheap**", and I wrote a new kernel with endomorphism. It took me a few moments until I realized that my speed is 79M × 6 points = **==474M keys/s==**. And I have officially broken the internet record with my speed. I was so happy. I remember telling everybody that I have the fastest solver in the world. I was so happy I was explaining to my wife WTF I did.
+WTF is this endomorphism? It seems that you can represent one private key easily and cheaply with 5 more points which are somehow mathematically related to the original private key. All what I understood was "**cheap**", and I wrote a new kernel with endomorphism. It took me a few moments until I realized that my speed is 79M × 6 points = `474M keys/s`. And I have officially broken the internet record with my speed. I was so happy. I remember telling everybody that I have the fastest solver in the world. I was so happy I was explaining to my wife WTF I did.
 
 A day later and I went insane. After reading about endomorphism, I realized that my **5 extra endo points are always outside of my puzzle range** and I am wasting my time with doing a search with this kernel. Maybe my speed was 474M but 5 of 6 points are useless and they will never help me find anything. Such a disappointment. I think somebody posted his endo speed on the internet, and I was thinking this has to be a base speed for me. For vanity search, endomorphism can really help and you can generate 474 million addresses per second, but for my case, this was a failed attempt. Fuck, again, back to square one.
 
@@ -259,7 +259,7 @@ Months of wasted time, learning math, trying to understand academic math, got me
 
 At this moment I decided not to upload my code on GitHub after realizing that many people are really downloading this app. One day it also broke the record and there were more than **100 unique clones** of my code on GitHub. **More then an eQ!!!** If now everybody has the fastest tool to resolve the puzzle, then the only winning argument now is who has more GPUs. Fuck, I realized that I have only one GPU.
 
-The GUI code and all further explanations are not on GitHub. Latest public version is **==0.5.0 with 147M keys/s==**. I did not even upload the endomorphism kernel. This was only for me.
+The GUI code and all further explanations are not on GitHub. Latest public version is `0.5.0 with 147M keys/s`. I did not even upload the endomorphism kernel. This was only for me.
 
 For now the GUI is basic. Can only select device and mode. Later it grew a lot.
 
@@ -323,7 +323,7 @@ You start the app, select GPU mode and a new button shows. Select if you want to
 
 After the benchmark is done, the program will select the fastest kernel and the fastest combination of all parameters to get the highest speed possible. Auto-tuned launch configuration based on GPU SM count is also there.
 
-Right now we have **==key-hunter version 1.1.0 with 182M keys/s==** on a GTX 1650.
+Right now we have `key-hunter version 1.1.0 with 182M keys/s` on a GTX 1650.
 
 <video controls>
   <source src="/assets/article_images/2026-10-09-key-hunter/1.1.0-benchmark.mp4" type="video/mp4">
