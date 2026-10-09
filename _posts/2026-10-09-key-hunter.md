@@ -230,8 +230,10 @@ At this point I am using Jacobian math (a way to represent elliptic curve points
 
 Right now I am using **Rust** for host app, I compile my **C++** code into **assembly** code and I run **python** code to verify my mathematic. What a wonderful day to hang yourself up :D
 
-![Version 0.5.0](/assets/article_images/2026-10-09-key-hunter/0.5.0.mp4)
-
+<video controls>
+  <source src="/assets/article_images/2026-10-09-key-hunter/0.5.0.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 # New try
 
@@ -323,8 +325,10 @@ After the benchmark is done, the program will select the fastest kernel and the 
 
 Right now we have **==key-hunter version 1.1.0 with 182M keys/s==** on a GTX 1650.
 
-![Benchmark 1.1.0](/assets/article_images/2026-10-09-key-hunter/1.1.0-benchmark.mp4)
-
+<video controls>
+  <source src="/assets/article_images/2026-10-09-key-hunter/1.1.0-benchmark.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 # What the app actually has today
 
