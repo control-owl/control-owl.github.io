@@ -373,18 +373,15 @@ I accept almost any crypto as a payment, make me an offer, I will think about if
 
 ## Some old photos
 
-![CPU mode](/assets/article_images/2026-10-09-key-hunter/IMG_20251218_235531936.jpg)
+![CPU only mode, December 2025](/assets/article_images/2026-10-09-key-hunter/IMG_20251218_235531936.jpg)
 
-![GPU mode](/assets/article_images/2026-10-09-key-hunter/IMG_20260107_232027620.jpg)
+![GPU mode, January 2026](/assets/article_images/2026-10-09-key-hunter/IMG_20260107_232027620.jpg)
 
-<!-- ![GUI mode](/assets/article_images/2026-10-09-key-hunter/IMG_20260913_232740485.jpg) -->
-
-{% include image.html src="/assets/article_images/2026-10-09-key-hunter/IMG_20260913_232740485.jpg" alt="GUI mode" width="600px" %}
-
+![GUI mode, September 2026](/assets/article_images/2026-10-09-key-hunter/IMG_20260913_232740485.jpg)
 
 # Latest preview
 
-This is the latest preview. 
+This is the latest preview:
 
 ## Version 1.1.0
 
