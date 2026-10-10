@@ -216,7 +216,7 @@ Right now, key-hunter can be started with **CPU** or **GPU** device, and it can 
 
 I implemented logic to save progress to a file. The allocator is central and crash-safe. Progress is saved to status/ folders (SEQ, PCG, PM). No overlaps, no skipped keys. On success the key is written to status/address.txt. So for now there is no possibility to skip a key or to repeat same key ever. Everything is saved to files and by second run, progress will just continue from last saved state. 
 
-<video controls>
+<video controls style="max-width: 100%; width: 600px;">
   <source src="/assets/article_images/2026-10-09-key-hunter/0.4.0.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -236,7 +236,7 @@ At this point I am using Jacobian math (a way to represent elliptic curve points
 
 Right now I am using **Rust** for host app, I compile my **C++** code into **assembly** code and I run **python** code to verify my mathematic. What a wonderful day to hang yourself up :D
 
-<video controls>
+<video controls style="max-width: 100%; width: 600px;">
   <source src="/assets/article_images/2026-10-09-key-hunter/0.5.0.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -331,7 +331,7 @@ After the benchmark is done, the program will select the fastest kernel and the 
 
 Right now we have `key-hunter version 1.1.0 with 184M keys/s` on a GTX 1650.
 
-<video controls>
+<video controls style="max-width: 100%; width: 600px;">
   <source src="/assets/article_images/2026-10-09-key-hunter/1.1.0-benchmark.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -383,9 +383,11 @@ I accept almost any crypto as a payment, make me an offer, I will think about if
 
 # Latest preview
 
-This is the latest preview. Version 1.1.0
+This is the latest preview. 
 
-<video controls>
+## Version 1.1.0
+
+<video controls style="max-width: 100%; width: 600px;">
   <source src="/assets/article_images/2026-10-09-key-hunter/1.1.0-release.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
