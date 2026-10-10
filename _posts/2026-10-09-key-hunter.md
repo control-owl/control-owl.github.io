@@ -377,8 +377,9 @@ I accept almost any crypto as a payment, make me an offer, I will think about if
 
 ![GPU mode](/assets/article_images/2026-10-09-key-hunter/IMG_20260107_232027620.jpg)
 
-![GUI mode](/assets/article_images/2026-10-09-key-hunter/IMG_20260913_232740485.jpg)
+<!-- ![GUI mode](/assets/article_images/2026-10-09-key-hunter/IMG_20260913_232740485.jpg) -->
 
+{% include image.html src="/assets/article_images/2026-10-09-key-hunter/IMG_20260913_232740485.jpg" alt="GUI mode" width="600px" %}
 
 
 # Latest preview
