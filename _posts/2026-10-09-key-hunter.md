@@ -207,7 +207,7 @@ I had to learn modular arithmetic on the GPU, field operations for secp256k1, po
 
 ## Solving modes
 
-I know that the range starts from **0x800000000000000000** until **0x8fffffffffffffffff**. I know the private key is not immediately at the starting point nor at the end. It is spread somewhere between. So sequential mode is not helping me so much right now. Doing 1, 2, 3, 4.... will take time. So is there an alternative? What about random?
+I know that the range starts from **0x800000000000000000** until **0xffffffffffffffffff**. I know the private key is not immediately at the starting point nor at the end. It is spread somewhere between. So sequential mode is not helping me so much right now. Doing 1, 2, 3, 4.... will take time. So is there an alternative? What about random?
 
 What kind of random modes are there, but there must be no repeating the same private key. It must be a unique search where I check only once one particular key. So I found out about **LCG** (Linear Congruential Generator - a simple way to make a long sequence of pseudo-random numbers). As soon as I implemented it, I discovered **PCG** (Permuted Congruential Generator - a better and faster random number generator). So again, after implementing perfect code, I remove it and replace it with another one.
 
@@ -230,7 +230,7 @@ At this point I am using Jacobian math (a way to represent elliptic curve points
 
 Right now I am using **Rust** for host app, I compile my **C++** code into **assembly** code and I run **python** code to verify my mathematic. What a wonderful day to hang yourself up :D
 
-<video controls>
+<video class="post-video" controls>
   <source src="/assets/article_images/2026-10-09-key-hunter/0.5.0.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -325,7 +325,7 @@ After the benchmark is done, the program will select the fastest kernel and the 
 
 Right now we have `key-hunter version 1.1.0 with 184M keys/s` on a GTX 1650.
 
-<video controls>
+<video class="post-video" controls>
   <source src="/assets/article_images/2026-10-09-key-hunter/1.1.0-benchmark.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -366,6 +366,6 @@ I accept almost any crypto as a payment, make me an offer, I will think about if
 # Latest preview
 
 <video controls>
-  <source src="/assets/article_images/2026-10-09-key-hunter/1.1.0-release.mp4" type="video/mp4">
+  <source class="post-video" src="/assets/article_images/2026-10-09-key-hunter/1.1.0-release.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
