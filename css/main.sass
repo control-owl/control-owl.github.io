@@ -3,66 +3,138 @@
 
 @import 'syntax-highlighting'
 
-@import 'bourbon/bourbon'
 
 .cf
-  @include clearfix
+  display: flow-root
 
 $rs: 16px
 
-$font-serif: Linux Libertine
-$font-sans: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif
+$bg-deep: #05080c
+$bg-surface: #0a1018
+$bg-card: #0e1620
+$bg-elevated: #141c28
+$border-subtle: #1a2535
+$border-glow: rgba(0, 229, 160, 0.45)
+$accent-green: #00e5a0
+$accent-green-bright: #3dffc0
+$accent-green-dim: rgba(0, 229, 160, 0.12)
+$accent-cyan: #00c8e5
+$accent-orange: #ff7a3d
+$accent-orange-bright: #ff9a5c
+$accent-orange-dim: rgba(255, 122, 61, 0.15)
+$text-primary: #e8eef6
+$text-secondary: #a0b0c4
+$text-muted: #6a7d94
+$glow-green: 0 0 18px rgba(0, 229, 160, 0.4), 0 0 4px rgba(0, 229, 160, 0.6)
+$glow-orange: 0 0 20px rgba(255, 122, 61, 0.45), 0 0 6px rgba(255, 122, 61, 0.5)
+$glow-soft: 0 8px 32px rgba(0, 0, 0, 0.45)
 
+$font-serif: "IBM Plex Serif", Georgia, serif
+$font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif
+$font-mono: "IBM Plex Mono", "SF Mono", Consolas, monospace
 
 @mixin respond-to($breakpoint)
   @media only screen and (max-width: $breakpoint + px)
     @content
 
-// Only needed for syntax highlighting
+@mixin respond-from($breakpoint)
+  @media only screen and (min-width: $breakpoint + px)
+    @content
+
 %vertical-rhythm
   margin-bottom: $rs
 
 main
   display: block
 
-
+html
+  background-color: $bg-deep
+  background-image: linear-gradient(rgba(0, 229, 160, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 229, 160, 0.03) 1px, transparent 1px)
+  background-size: 48px 48px
+  background-attachment: fixed
 
 body
   font-family: $font-sans
   margin: 0
   padding: 0
+  background-color: transparent
+  color: $text-primary
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
-  -moz-font-feature-settings: "liga=1, dlig=1"
-  -ms-font-feature-settings: "liga", "dlig"
-  -webkit-font-feature-settings: "liga", "dlig"
-  -o-font-feature-settings: "liga", "dlig"
-  font-feature-settings: "liga", "dlig"
+  -moz-osx-font-smoothing: grayscale
+  line-height: 1.65
+  min-height: 100vh
+  position: relative
+  &::before
+    content: ""
+    position: fixed
+    inset: 0
+    pointer-events: none
+    z-index: 0
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 229, 160, 0.06) 0%, transparent 55%), radial-gradient(ellipse 60% 40% at 80% 100%, rgba(255, 122, 61, 0.04) 0%, transparent 50%)
+  > *
+    position: relative
+    z-index: 1
+
+a
+  color: $accent-green
+  transition: color 0.2s ease, text-shadow 0.2s ease
+  text-shadow: 0 0 8px rgba(0, 229, 160, 0.25)
+  &:hover
+    color: $accent-green-bright
+    text-shadow: 0 0 14px rgba(0, 229, 160, 0.65), 0 0 4px rgba(0, 229, 160, 0.4)
 
 .logo-readium
   position: fixed
-  left: 2px
-  top: 2px
-  width: $rs*2
-  height: $rs*2
-  background-color: #070410
+  left: 10px
+  top: 10px
+  width: 38px
+  height: 38px
+  background-color: $bg-card
+  border: 2px solid $accent-green
+  border-radius: 4px
   overflow: hidden
-  z-index: 99
+  z-index: 100
+  box-shadow: $glow-green
+  transition: border-color 0.25s, box-shadow 0.25s
+  &:hover
+    border-color: $accent-orange
+    box-shadow: $glow-orange
   .logo
     display: block
     position: absolute
-    // top: $rs/2
-    // left: $rs/2
-    width: $rs*2
-    height: $rs*2
+    width: 100%
+    height: 100%
     background-size: cover
     background-repeat: no-repeat
 
 .teaserimage
-  height: 450px
+  height: 400px
   position: relative
   overflow: hidden
-  background-color: #000
+  background-color: $bg-deep
+  border-bottom: 2px solid $accent-green
+  box-shadow: 0 0 40px rgba(0, 229, 160, 0.15)
+  &::after
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    height: 140px
+    background: linear-gradient(to top, $bg-deep 10%, transparent)
+    z-index: 2
+    pointer-events: none
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 2px
+    background: linear-gradient(90deg, transparent, $accent-green, $accent-cyan, $accent-green, transparent)
+    z-index: 3
+    opacity: 0.8
   .teaserimage-image
     background-size: cover
     background-position: center
@@ -73,117 +145,188 @@ body
     bottom: 0
     z-index: 1
     text-indent: -9999px
+    opacity: 0.7
+    filter: saturate(0.8) brightness(0.75)
 
 .blog-header
   width: 100%
-  max-width: 640px
+  max-width: 780px
   margin: 0 auto
   position: relative
   padding: 0
-  @include box-sizing(border-box)
-  @include respond-to(800)
-    padding: 0 $rs
+  box-sizing: border-box
+  @include respond-to(860)
+    padding: 0 $rs * 1.25
   .blog-logo
-    width: $rs*7.5
-    height: $rs*7.5
+    width: 100px
+    height: 100px
     position: absolute
-    top: -$rs*3.75
+    top: -50px
     right: 50%
-    margin-right: -$rs*3.75
+    margin-right: -50px
     background-size: cover
     border-radius: 50%
     z-index: 99
     text-indent: -9999px
-    border: 3px solid #fff
-    background-color: #fff
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3)
-    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3)
-    box-shadow: 0 1px 1px rgba(0,0,0,0.3)
+    border: 3px solid $accent-green
+    background-color: $bg-card
+    box-shadow: $glow-green, 0 6px 28px rgba(0, 0, 0, 0.55)
   .blog-title
     margin: 0
-    padding: $rs*5.25 $rs $rs/2
-    font-size: 50px
+    padding: 72px $rs 8px
+    font-size: 40px
     text-align: center
-    font-weight: 700
-    letter-spacing: -2px
+    font-weight: 600
+    letter-spacing: 0.08em
     outline: 0
-    line-height: 50px
+    line-height: 1.15
     word-break: break-word
-    color: #333
+    color: $text-primary
+    font-family: $font-sans
+    text-transform: uppercase
+    text-shadow: 0 0 24px rgba(0, 229, 160, 0.25)
+    @include respond-to(600)
+      font-size: 28px
+      padding-top: 64px
   .blog-description
     margin: 0 0 20px
-    padding: 0 $rs*2
-    font-size: $rs/8*9
+    padding: 0 $rs * 2
+    font-size: 15px
     line-height: 1.5
-    color: #666
+    color: $text-secondary
     text-align: center
     font-weight: 400
+    letter-spacing: 0.03em
   .custom-links
-    margin: 0 0 50px
+    margin: 0 0 44px
     text-align: center
-    color: #ccc
+    color: $text-muted
+    font-size: 14px
     a
       text-decoration: none
-      color: #999
+      color: $text-secondary
+      padding: 5px 8px
+      border-radius: 3px
+      transition: color 0.2s, background 0.2s, box-shadow 0.2s
       &:hover
-        color: #333
+        color: $accent-green
+        background: $accent-green-dim
+        box-shadow: 0 0 12px rgba(0, 229, 160, 0.2)
 
 .content
   width: 100%
-  max-width: 640px
+  max-width: 780px
   margin: 0 auto
-  @include box-sizing(border-box)
-  @include respond-to(800)
-    padding: 0 $rs*2
-  article
-    padding: 40px 0
-    border-bottom: 1px solid #f2f2f0
-    &:last-child
-      border-bottom: 0px
-    .post-title
-      letter-spacing: -0.02em
-      font-weight: 700
-      font-style: normal
-      display: block
-      font-size: 28px
-      line-height: 1.1
-      margin: 0 0
-      a
-        text-decoration: none
-        color: #333332
-        &:hover
-          text-decoration: none
-    .post-excerpt
-      letter-spacing: -0.02em
-      font-weight: 300
-      font-style: normal
-      font-size: 20px
-      line-height: 1.3
-      color: #666665
-    .post-meta
-      font-size: 14px
-      color: #b3b3b1
-      line-height: 30px
-      a
-        color: #b3b3b1
-        text-decoration: none
-        &:hover
-          text-decoration: underline
-.container.featured
-  padding-bottom: 40px
+  box-sizing: border-box
+  @include respond-to(860)
+    padding: 0 $rs * 1.25
 
-.post-template .content
-  max-width: 700px
+// Wider column on single posts
+.post-template .content,
+.content.post-wide
+  max-width: 860px
+  @include respond-from(1100)
+    max-width: 900px
+
+.frame article.post,
+.container.featured article.post
+  position: relative
+  padding: 0
+  margin-bottom: 22px
+  border: 2px solid $accent-green
+  background: linear-gradient(165deg, $bg-card 0%, darken($bg-card, 2%) 100%)
+  border-radius: 3px
+  box-shadow: 0 0 0 1px rgba(0, 229, 160, 0.08), $glow-soft
+  transition: border-color 0.28s ease, box-shadow 0.28s ease, transform 0.22s ease, background 0.28s ease
+  overflow: hidden
+  &::before,
+  &::after
+    content: ""
+    position: absolute
+    width: 12px
+    height: 12px
+    border-color: $accent-green
+    border-style: solid
+    transition: border-color 0.28s
+    z-index: 2
+    pointer-events: none
+  &::before
+    top: 4px
+    left: 4px
+    border-width: 2px 0 0 2px
+  &::after
+    bottom: 4px
+    right: 4px
+    border-width: 0 2px 2px 0
+  &:hover
+    border-color: $accent-orange
+    box-shadow: $glow-orange, 0 12px 36px rgba(0, 0, 0, 0.4)
+    transform: translateY(-2px)
+    background: linear-gradient(165deg, lighten($bg-card, 2%) 0%, $bg-card 100%)
+    &::before,
+    &::after
+      border-color: $accent-orange
+  .article-item
+    padding: 22px 26px 20px
+    position: relative
+    z-index: 1
+  .post-title
+    letter-spacing: -0.01em
+    font-weight: 600
+    font-style: normal
+    display: block
+    font-size: 21px
+    line-height: 1.3
+    margin: 0 0 10px
+    a
+      text-decoration: none
+      color: $text-primary
+      &::after
+        content: ""
+        position: absolute
+        inset: 0
+        z-index: 3
+      &:hover
+        color: $accent-green-bright
+        text-shadow: none
+  .post-excerpt
+    letter-spacing: 0
+    font-weight: 400
+    font-style: normal
+    font-size: 15px
+    line-height: 1.55
+    color: $text-secondary
+    pointer-events: none
+    p
+      margin: 0
+  .post-meta
+    margin-top: 14px
+    font-size: 11px
+    color: $text-muted
+    line-height: 1.4
+    font-family: $font-mono
+    letter-spacing: 0.06em
+    text-transform: uppercase
+    pointer-events: none
+    a
+      color: $text-muted
+      text-decoration: none
+
+.container.featured
+  padding-bottom: 20px
 
 .index-headline
-  border-top: 1px solid #dededc
-  margin: 0
-  padding: 16px 0
+  border-top: none
+  margin: 0 0 14px
+  padding: 6px 0
   span
-    color: #b3b3b1
-    font-size: $rs/8*5
+    color: $accent-green
+    font-size: 11px
     text-transform: uppercase
-    letter-spacing: 1px
+    letter-spacing: 0.16em
+    font-family: $font-mono
+    font-weight: 500
+    text-shadow: 0 0 12px rgba(0, 229, 160, 0.35)
 
 .archive-template
   .index-headline.featured
@@ -191,353 +334,517 @@ body
 
 .pagination
   text-align: center
-  padding: $rs*3 0 0
-  font-size: $rs/4*3
+  padding: $rs * 2.5 0 $rs * 1.5
+  font-size: 12px
+  font-family: $font-mono
+  letter-spacing: 0.06em
   a
-    color: #999
+    color: $text-secondary
     text-decoration: none
+    padding: 8px 16px
+    border: 2px solid $border-subtle
+    border-radius: 2px
+    margin: 0 6px
+    transition: all 0.22s
+    display: inline-block
     &:hover
-      color: #333
+      color: $accent-green
+      border-color: $accent-green
+      box-shadow: $glow-green
+  .page-number
+    color: $text-muted
+    padding: 0 10px
 
 .post-reading
   position: absolute
-  top: 10px
-  right: 30px
-  line-height: 44px
+  top: 14px
+  right: 24px
+  line-height: 1.4
   display: inline-block
   white-space: nowrap
-  color: rgba(0,0,0,0.25)
-  font-size: 14px
-  letter-spacing: -0.02em
+  color: $text-muted
+  font-size: 11px
+  letter-spacing: 0.05em
   font-weight: 400
-  font-style: normal
-  font-family: $font-sans
+  font-family: $font-mono
   z-index: 999
 .tag-articleimage .post-reading
-  color: rgba(255,255,255,0.9)
-  text-shadow: 0px 1px 4px rgba(0,0,0,0.25), 0px 0px 1px rgba(0,0,0,0.5)
+  color: rgba(255, 255, 255, 0.88)
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5)
 
 .site-footer
   margin: 0 auto
-  padding: $rs*3 0
+  padding: $rs * 2.5 0 $rs * 3.5
   width: 100%
-  max-width: 640px
-  font-size: $rs/4*3
+  max-width: 780px
+  font-size: 13px
   text-align: center
-  color: #999
-  line-height: $rs*1.1
+  color: $text-muted
+  line-height: 1.55
+  border-top: 1px solid $border-subtle
+  position: relative
+  &::before
+    content: ""
+    position: absolute
+    top: -1px
+    left: 50%
+    transform: translateX(-50%)
+    width: 80px
+    height: 2px
+    background: linear-gradient(90deg, transparent, $accent-green, transparent)
   a
-    color: #666
+    color: $text-secondary
     text-decoration: none
     &:hover
-      color: #333
+      color: $accent-green
+  .subscribe
+    display: inline-block
+    margin-bottom: 12px
+    .tooltip
+      color: $text-secondary
+      &:hover
+        color: $accent-green
+
 .post
+  // Full-viewport hero image behind title
   .article-image
     position: absolute
-    background-color: #000
     top: 0
     left: 0
-    right: 0
-    bottom: 0
+    width: 100%
+    // break out of the narrow .content column
+    margin-left: calc(50% - 50vw)
+    width: 100vw
+    height: 85vh
+    min-height: 420px
+    max-height: 900px
+    background-color: $bg-deep
     overflow: hidden
-    @media(min-width: 700px)
+    z-index: 1
+    @media (min-width: 700px)
       .post-image-image
         background-size: cover
+        background-position: center
         position: absolute
         top: 0
         left: 0
         right: 0
         bottom: 0
         text-indent: -9999px
-        padding-top: 33%
         z-index: 1
+        opacity: 0.85
+        filter: saturate(0.9) brightness(0.75)
       .post-image-image2
         display: none
-    @media(max-width: 700px)
+    @media (max-width: 700px)
+      height: 70vh
+      min-height: 320px
       .post-image-image
         display: none
       .post-image-image2
         background-size: cover
+        background-position: center
         position: absolute
         top: 0
         left: 0
         right: 0
         bottom: 0
         text-indent: -9999px
-        padding-top: 33%
         z-index: 1
+        opacity: 0.85
+        filter: saturate(0.9) brightness(0.75)
+    &::after
+      content: ""
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      height: 160px
+      background: linear-gradient(to top, $bg-deep, transparent)
+      z-index: 2
+      pointer-events: none
     .post-meta
       position: absolute
-      bottom: $rs*5
-      left: 30%
-      right: 30%
+      bottom: 80px
+      left: 50%
+      transform: translateX(-50%)
+      width: 100%
+      max-width: 860px
+      padding: 0 24px
       z-index: 9
       font-family: $font-sans
-      @include box-sizing(border-box)
-      @include respond-to(800)
-        left: $rs
-        right: $rs
+      box-sizing: border-box
+      @include respond-to(860)
+        padding: 0 $rs * 1.25
+        bottom: 60px
     .post-title
-      font-weight: 700
+      font-weight: 600
       font-style: normal
-      letter-spacing: -0.04em
-      font-size: 50px
-      line-height: 1.1
+      letter-spacing: -0.015em
+      font-size: 42px
+      line-height: 1.15
       color: #fff
-      margin-bottom: 16px
-      text-shadow: 0px 1px 16px rgba(0,0,0,0.5), 0px 0px 1px rgba(0,0,0,0.5)
+      margin-bottom: 14px
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.75), 0 0 2px rgba(0, 0, 0, 0.5)
+      @include respond-to(600)
+        font-size: 28px
     .author-image
       display: inline-block
-      width: 30px
-      height: 30px
-      line-height: 30px
-      margin-right: 8px
-      margin-bottom: -10px
-      float: left
+      width: 28px
+      height: 28px
+      margin-right: 10px
+      margin-bottom: 0
+      vertical-align: middle
       background-size: cover
-      border-radius: 100%
+      background-position: center
+      border-radius: 50%
       text-indent: -9999px
+      border: 2px solid $accent-green
+      box-sizing: content-box
+      flex-shrink: 0
     .author-name
       display: inline
+      color: rgba(255, 255, 255, 0.9)
+      vertical-align: middle
     .post-meta-text
-      color: rgba(255,255,255,0.75)
-      letter-spacing: -0.02em
+      color: rgba(255, 255, 255, 0.82)
+      letter-spacing: 0.03em
       font-weight: 400
       font-style: normal
-      text-shadow: 0px 1px 4px rgba(0,0,0,0.25), 0px 0px 1px rgba(0,0,0,0.5)
-      font-size: 14px
-      overflow: hidden
-      font-family: $font-sans
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45)
+      font-size: 13px
+      overflow: visible
+      font-family: $font-mono
       white-space: nowrap
       text-overflow: ellipsis
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      gap: 0 4px
       a
-        color: rgba(255,255,255,0.75)
+        color: rgba(255, 255, 255, 0.82)
         &:hover
-          color: rgba(255,255,255,1)
+          color: #fff
     .fa-angle-down
-      font-size: 32px
-      margin: 64px auto 0
-      color: rgba(255,255,255,0.75)
+      font-size: 28px
+      margin: 36px auto 0
+      color: rgba(255, 255, 255, 0.7)
+      display: block
+      text-align: center
       &:hover
-        color: #fff
+        color: $accent-green
     .topofpage
-      text-decoration: underline
+      text-decoration: none
+      display: block
+      text-align: center
+
   .noarticleimage
     .post-meta
       font-family: $font-sans
-      padding-top: 60px
+      padding-top: 72px
     .post-title
-      font-weight: 700
+      font-weight: 600
       font-style: normal
-      letter-spacing: -0.04em
-      font-size: 50px
-      line-height: 1.1
-      color: #333332
-      margin-bottom: 16px
+      letter-spacing: -0.015em
+      font-size: 34px
+      line-height: 1.2
+      color: $text-primary
+      margin-bottom: 14px
+      text-shadow: 0 0 20px rgba(0, 229, 160, 0.15)
+      @include respond-to(600)
+        font-size: 26px
     .author-image
       display: inline-block
-      width: 30px
-      height: 30px
-      line-height: 30px
-      margin-right: 8px
-      margin-bottom: -10px
-      float: left
+      width: 28px
+      height: 28px
+      margin-right: 10px
+      margin-bottom: 0
+      vertical-align: middle
       background-size: cover
-      border-radius: 100%
+      background-position: center
+      border-radius: 50%
       text-indent: -9999px
+      border: 2px solid $accent-green
+      box-sizing: content-box
+      flex-shrink: 0
     .author-name
       display: inline
+      vertical-align: middle
     .post-meta-text
-      color: #b3b3b1
-      letter-spacing: -0.02em
+      color: $text-muted
+      letter-spacing: 0.03em
       font-weight: 400
       font-style: normal
-      font-size: 14px
-      overflow: hidden
-      font-family: $font-sans
+      font-size: 13px
+      overflow: visible
+      font-family: $font-mono
       white-space: nowrap
       text-overflow: ellipsis
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      gap: 0 4px
+
   .post-content
+    position: relative
+    z-index: 5
     width: 100%
-    font-family: $font-serif
-    color: #333
-    h1, h2, h3
+    max-width: 860px
+    margin: 0 auto
+    font-family: $font-sans
+    color: $text-primary
+    background: transparent
+    h1
       font-family: $font-sans
-    h3, h4, h5, h6
+      font-weight: 600
+      font-size: 28px
+      line-height: 1.25
       letter-spacing: -0.02em
-      font-weight: 700
-      font-style: normal
-      font-size: 24px
+      padding-top: 36px
+      margin: 0 0 14px
+      color: $accent-green-bright
+      text-shadow: 0 0 18px rgba(0, 229, 160, 0.3)
+      border-bottom: 1px solid rgba(0, 229, 160, 0.25)
+      padding-bottom: 10px
+    h2
+      font-family: $font-sans
+      font-weight: 600
+      font-size: 23px
       line-height: 1.3
-      margin: 0
+      letter-spacing: -0.015em
+      padding-top: 32px
+      margin: 0 0 12px
+      color: $accent-cyan
+      text-shadow: 0 0 14px rgba(0, 200, 229, 0.25)
+      position: relative
+      padding-left: 14px
+      &::before
+        content: ""
+        position: absolute
+        left: 0
+        top: 36px
+        bottom: 2px
+        width: 3px
+        background: $accent-cyan
+        border-radius: 1px
+        box-shadow: 0 0 8px rgba(0, 200, 229, 0.5)
+    h3
       font-family: $font-sans
-      margin-bottom: 4px
-    h2, h1
-      letter-spacing: -0.02em
-      font-weight: 700
-      font-style: normal
-      font-size: 32px
-      line-height: 1.2
-      padding-top: 31px
-      margin-bottom: 4px
+      font-weight: 600
+      font-size: 18px
+      line-height: 1.35
+      letter-spacing: -0.01em
+      padding-top: 26px
+      margin: 0 0 10px
+      color: $accent-orange
+      text-shadow: 0 0 12px rgba(255, 122, 61, 0.25)
+    h4, h5, h6
+      font-family: $font-sans
+      font-weight: 600
+      font-size: 16px
+      line-height: 1.4
+      padding-top: 20px
+      margin: 0 0 8px
+      color: lighten($accent-orange, 12%)
+      letter-spacing: 0.02em
     p
       font-weight: 400
       font-style: normal
-      font-size: 22px
-      line-height: 30px
+      font-size: 17px
+      line-height: 1.75
       margin: 0
-      padding-bottom: 30px
-      color: #333
+      padding-bottom: 20px
+      color: $text-secondary
       -webkit-hyphens: auto
       -moz-hyphens: auto
       hyphens: auto
+      @include respond-to(600)
+        font-size: 16px
+        line-height: 1.7
     a
-      color: #333
+      color: $accent-green
       text-decoration: underline
+      text-decoration-color: rgba(0, 229, 160, 0.35)
+      text-underline-offset: 3px
+      &:hover
+        color: $accent-green-bright
+        text-decoration-color: $accent-green
     img
       max-width: 100%
       margin: 0 auto
+      border-radius: 3px
+      border: 1px solid $border-subtle
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35)
     figure
       margin: 0
-      padding: 0 0 30px
+      padding: 0 0 22px
     figcaption
       font-weight: 400
       font-style: italic
-      font-size: 16px
-      line-height: 1.3
-      color: #666665
+      font-size: 13px
+      line-height: 1.4
+      color: $text-muted
       outline: 0
       z-index: 300
       text-align: center
+      margin-top: 8px
     hr
       border: 0
       padding: 0
       display: block
-      width: 15%
-      margin: 30px auto
-      border: 0px solid #ddd
-      border-top: 1px solid #ddd
+      width: 24%
+      margin: 32px auto
+      border-top: 1px solid $border-subtle
+      position: relative
+      &::after
+        content: ""
+        position: absolute
+        left: 50%
+        top: -1px
+        transform: translateX(-50%)
+        width: 40%
+        height: 1px
+        background: linear-gradient(90deg, transparent, $accent-green, transparent)
     blockquote
-      margin: 0 0 30px
-      margin-left: -26px
-      border-left: 3px solid #57ad68
-      padding-left: 20px
+      margin: 0 0 22px
+      border-left: 3px solid $accent-orange
+      padding: 14px 18px 14px 20px
+      background: $accent-orange-dim
+      border-radius: 0 3px 3px 0
       p
-        letter-spacing: 0.01rem
+        letter-spacing: 0
         font-weight: 400
         font-style: italic
-        mborder-left: 3px solid #57ad68
-        mpadding-left: 20px
-        mmargin-left: -26px
-        padding-bottom: 3px
+        padding-bottom: 0
+        color: $text-primary
+        margin: 0
     ul, ol
-      padding: 0 0 30px
+      padding: 0 0 20px
       margin: 0
     li
       padding: 0
       font-weight: 400
       font-style: normal
-      font-size: 23px
-      line-height: 30px
-      margin-left: 30px
-      margin-bottom: 12px
+      font-size: 16px
+      line-height: 1.65
+      margin-left: 22px
+      margin-bottom: 8px
       padding-top: 2px
+      color: $text-secondary
       p
-        padding: 0 0 golden-ratio(1rem,  1)
+        padding: 0
     ol li
       list-style-type: decimal
+
   .bottom-teaser
-    padding: 50px 0
+    position: relative
+    z-index: 5
+    padding: 40px 0
     font-family: $font-sans
+    border-top: 1px solid $border-subtle
+    margin-top: 36px
     hr
       border: 0
       padding: 0
       display: block
       width: 15%
-      margin: 16px 0 16px 100px
-      border: 0px solid #ddd
-      border-top: 1px solid #ddd
+      margin: 14px 0 14px 90px
+      border-top: 1px solid $border-subtle
     .isLeft
       float: left
       width: 47%
-      @include box-sizing(border-box)
-      @include respond-to(800)
+      box-sizing: border-box
+      @include respond-to(860)
         width: 100%
-        padding-bottom: $rs*2
+        padding-bottom: $rs * 2
       .index-headline
-        padding-bottom: 32px
+        padding-bottom: 18px
       a
-        color: #000
+        color: $text-primary
         text-decoration: none
         &:hover
-          color: #333
-          text-decoration: underline
+          color: $accent-green
       .author-image
         display: block
-        width: 80px
-        height: 80px
+        width: 64px
+        height: 64px
         float: left
         background-size: cover
-        border-radius: 100%
+        border-radius: 50%
         text-indent: -9999px
+        border: 2px solid $accent-green
+        box-shadow: 0 0 12px rgba(0, 229, 160, 0.25)
       h4
-        font-size: 18px
-        line-height: 1.1
-        font-weight: 700
+        font-size: 16px
+        line-height: 1.2
+        font-weight: 600
         padding: 0
         margin: 0
-        padding-left: 100px
+        padding-left: 80px
+        color: $text-primary
       p
-        font-size: 14px
-        line-height: 1.3
+        font-size: 13px
+        line-height: 1.4
         font-weight: 400
         padding: 0
         margin: 0
-        padding-left: 100px
+        padding-left: 80px
+        color: $text-secondary
         &.published
-          color: #999
+          color: $text-muted
+          font-family: $font-mono
+          font-size: 11px
+          margin-top: 6px
+          letter-spacing: 0.04em
     .isRight
       float: right
       width: 47%
-      @include box-sizing(border-box)
-      @include respond-to(800)
+      box-sizing: border-box
+      @include respond-to(860)
         width: 100%
       .index-headline
-        padding-bottom: 32px
+        padding-bottom: 18px
       .site-footer
         margin: 0
         padding: 0
-        color: #333
+        color: $text-muted
         text-align: left
-        font-size: 14px
-        line-height: 1.3
-        color: #999
+        font-size: 13px
+        line-height: 1.4
+        border-top: none
+        &::before
+          display: none
         a
-          color: #333
+          color: $text-secondary
           text-decoration: none
           &:hover
-            text-decoration: underline
+            color: $accent-green
         .poweredby
           display: block
-          padding-bottom: 18px
-          font-weight: 700
-          color: #333
+          padding-bottom: 12px
+          font-weight: 600
+          color: $text-secondary
+
 .share
+  position: relative
+  z-index: 5
   text-align: right
   padding: 20px 0 0
   a
     text-decoration: none
-    color: #bbb
+    color: $text-muted
     padding-left: 12px
     .hidden
       display: none
     &:hover
-      color: #333
+      color: $accent-green
 
 .bottom-closer
   width: 100%
   position: relative
   overflow: hidden
+  border-top: 2px solid $accent-green
+  min-height: 360px
   .background-closer-image
     position: absolute
     top: 0
@@ -548,74 +855,102 @@ body
     background-size: cover
     background-repeat: no-repeat
     background-position: center
+    opacity: 0.45
+    filter: saturate(0.75) brightness(0.55)
   .inner
     width: 100%
     position: relative
     z-index: 99
-    max-width: 640px
-    padding: 120px 0 90px
+    max-width: 780px
+    padding: 100px 24px 80px
     text-align: center
     margin: 0 auto
+    box-sizing: border-box
     .blog-title
       margin: 0
       padding: 0 0 10px
-      font-size: 50px
+      font-size: 34px
       text-align: center
-      font-weight: 700
-      letter-spacing: -2px
+      font-weight: 600
+      letter-spacing: 0.06em
       outline: 0
-      line-height: 50px
+      line-height: 1.2
       word-break: break-word
       color: #fff
-      text-shadow: 0px 1px 16px rgba(0,0,0,0.5), 0px 0px 1px rgba(0,0,0,0.5)
+      text-transform: uppercase
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 229, 160, 0.2)
     .blog-description
-      margin: 0 0 50px
-      padding: 0 $rs*2
-      font-size: $rs/8*9
+      margin: 0 0 36px
+      padding: 0 $rs * 2
+      font-size: 15px
       line-height: 1.5
-      color: #fff
+      color: rgba(255, 255, 255, 0.85)
       text-align: center
       font-weight: 400
-      text-shadow: 0px 1px 16px rgba(0,0,0,0.5), 0px 0px 1px rgba(0,0,0,0.5)
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5)
     .custom-links
-      margin: 0 0 50px
+      margin: 0 0 36px
     .btn
       display: inline-block
       text-align: center
-      letter-spacing: -0.02em
-      font-size: 15px
-      font-weight: 400
+      letter-spacing: 0.08em
+      font-size: 12px
+      font-weight: 500
       font-style: normal
       text-decoration: none
       cursor: pointer
       height: 44px
-      background: #57ad68
-      color: #fff
+      background: transparent
+      color: $accent-green
       vertical-align: middle
       box-sizing: border-box
-      border-radius: 999em
-      line-height: 44px
-      padding: 0 18px
+      border-radius: 2px
+      line-height: 40px
+      padding: 0 24px
+      border: 2px solid $accent-green
+      font-family: $font-mono
+      text-transform: uppercase
+      transition: all 0.22s
+      &:hover
+        background: $accent-green-dim
+        box-shadow: $glow-green
+        color: $accent-green-bright
+        border-color: $accent-green-bright
 
 #disqus_thread
-  margin-top: 50px
+  margin-top: 40px
+  position: relative
+  z-index: 5
+
 .post-tag-articleimage
   display: none
 
 pre,
 code
-  font-size: 15px
-  border: 1px solid #e8e8e8
+  font-family: $font-mono
+  font-size: 14px
+  border: 1px solid $border-subtle
   border-radius: 3px
-  background-color: #eef
+  background-color: $bg-elevated
 
 code
-  padding: 1px 5px
+  padding: 2px 7px
+  color: $accent-green
 
 pre
-  padding: 8px 12px
-  overflow-x: scroll
+  padding: 16px 18px
+  overflow-x: auto
+  margin: 0 0 24px
+  box-shadow: inset 0 0 0 1px rgba(0, 229, 160, 0.06)
   > code
     border: 0
-    padding-right: 0
-    padding-left: 0
+    padding: 0
+    color: $text-primary
+    background: transparent
+
+.cf.frame
+  margin-bottom: 8px
+
+.post-footer
+  position: relative
+  z-index: 5

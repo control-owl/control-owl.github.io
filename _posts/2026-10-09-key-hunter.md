@@ -21,7 +21,7 @@ In 2017, the Bitcoin in addresses **161-256** was moved to addresses in the lowe
 
 ## List of all puzzles
 
-
+```
 | Puzzle | Status | Private key                                                      |
 | ------ | ------ | ---------------------------------------------------------------- |
 | 1      | Solved | 0000000000000000000000000000000000000000000000000000000000000001 |
@@ -184,7 +184,7 @@ In 2017, the Bitcoin in addresses **161-256** was moved to addresses in the lowe
 | 158    | Active |                                                                  |
 | 159    | Active |                                                                  |
 | 160    | Active |                                                                  |
-
+```
 
 
 # Software

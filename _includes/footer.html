@@ -1,7 +1,14 @@
 <footer class="site-footer">
-  <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
-    <div class="inner">
-         <section class="copyright">All content copyright <a href="mailto:{{ site.email}}">{{ site.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; All rights reserved.</section>
-         <section class="poweredby">Made with <a href="http://jekyllrb.com">Jekyll</a></section>
-    </div>
+  <a class="subscribe" href="{{ " /feed.xml" | prepend: site.baseurl }}"><span class="tooltip"><i class="fa fa-rss"></i>
+      Subscribe</span></a>
+  <div class="inner">
+    <section class="copyright">All content copyright <a href="mailto:{{ site.email }}">{{ site.name }}</a> &copy; {{
+      site.time | date: '%Y' }} &bull; All rights reserved.</section>
+    <section class="poweredby">Made with <a href="https://jekyllrb.com">Jekyll</a>Control Owl</section>
+    <section class="visit-counter" style="margin-top: 14px;">
+      <img
+        src="https://hits.sh/control-owl.github.io.svg?view=today-total&style=flat-square&label=visits&color=00e5a0&labelColor=0e1620"
+        alt="page visits" style="vertical-align: middle; height: 20px;">
+    </section>
+  </div>
 </footer>

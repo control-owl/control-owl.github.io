@@ -1,40 +1,48 @@
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="{{ "/assets/js/jquery.fitvids.js" | prepend: site.baseurl  }}"></script>
-<script type="text/javascript" src="{{ "/assets/js/index.js" | prepend: site.baseurl  }}"></script>
-<script type="text/javascript" src="{{ "/assets/js/readingTime.min.js" | prepend: site.baseurl  }}"></script>
 <script>
-  (function ($) {
-    "use strict";
-    $(document).ready(function(){
+  (function () {
+    function padHero() {
+      var hero = document.querySelector('.article-image');
+      var content = document.querySelector('.post-content');
+      if (hero && content) {
+        content.style.paddingTop = hero.offsetHeight + 'px';
+      }
+    }
 
-      var $window = $(window),
-      $image = $('.post-image-image, .teaserimage-image');
-      
-        $window.on('scroll', function() {
-          var top = $window.scrollTop();
+    function parallax() {
+      var images = document.querySelectorAll('.post-image-image, .teaserimage-image');
+      if (!images.length) return;
+      var top = window.scrollY || window.pageYOffset;
+      if (top < 0 || top > 1500) return;
+      var opacity = 1 - Math.max(top / 700, 0);
+      var y = top / 3;
+      for (var i = 0; i < images.length; i++) {
+        images[i].style.transform = 'translate3d(0,' + y + 'px,0)';
+        images[i].style.opacity = opacity;
+      }
+    }
 
-          if (top < 0 || top > 1500) { return; }
-          $image
-            .css('transform', 'translate3d(0px, '+top/3+'px, 0px)')
-            .css('opacity', 1-Math.max(top/700, 0));
-        });
-        $window.trigger('scroll');
+    function readingTime() {
+      var content = document.querySelector('.post-content');
+      var target = document.querySelector('.post-reading-time');
+      if (!content || !target) return;
+      var text = content.innerText || content.textContent || '';
+      var words = text.trim().split(/\s+/).filter(Boolean).length;
+      var minutes = Math.max(1, Math.round(words / 200));
+      target.textContent = minutes + ' min';
+    }
 
-        var height = $('.article-image').height();
-        $('.post-content').css('padding-top', height + 'px');
+    function onReady() {
+      padHero();
+      parallax();
+      readingTime();
+      window.addEventListener('scroll', parallax, { passive: true });
+      window.addEventListener('resize', padHero);
+    }
 
-        $('a[href*=#]:not([href=#])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-          && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html,body').animate({ scrollTop: target.offset().top }, 500);
-              return false;
-            }
-          }
-        });
-
-    });
-  }(jQuery));
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', onReady);
+    } else {
+      onReady();
+    }
+  })();
 </script>
