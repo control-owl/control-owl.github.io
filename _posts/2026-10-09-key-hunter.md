@@ -341,6 +341,7 @@ Right now we have `key-hunter version 1.1.0 with 184M keys/s` on a GTX 1650.
 - CPU solver (Rayon, all cores)
 - GPU solver (CUDA via cudarc, multiple kernels)
 - Combined CPU + GPU mode with shared work allocator
+- Auto detect multi GPU system, configure each GPU accordingly
 - Live egui dashboard - progress, speed, current key, worker table, optional speed graph
 - Crash-safe progress saved to status/ (and backups/), resumes automatically
 - No overlaps / no skipped keys - central allocator with persistent log
