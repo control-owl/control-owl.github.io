@@ -389,3 +389,7 @@ This is the latest preview:
   <source src="/assets/article_images/2026-10-09-key-hunter/1.1.0-release.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+## GitHub Repository
+
+https://github.com/control-owl/key-hunter
