@@ -392,4 +392,4 @@ This is the latest preview:
 
 ## GitHub Repository
 
-https://github.com/control-owl/key-hunter
+[https://github.com/control-owl/key-hunter](https://github.com/control-owl/key-hunter)
