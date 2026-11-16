@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Puzzle Hunter Pro"
-date: 2026-12-01 00:00:00
+date: 2026-11-17 00:00:00
 categories: blog post
 # tags: featured
-image: /assets/article_images/2026-12-01-puzzle-hunter-pro/header.png
-image2: /assets/article_images/2026-12-01-puzzle-hunter-pro/header-mobile.png
+image: /assets/article_images/2026-11-17-puzzle-hunter-pro/header.png
+image2: /assets/article_images/2026-11-17-puzzle-hunter-pro/header-mobile.png
 ---
 
 
@@ -55,7 +55,7 @@ The core of my app is simple. It is written in `Rust`, since Rust is the best on
 
 Look at this simple interface:
 
-![UI](/assets/article_images/2026-12-01-puzzle-hunter-pro/UI.png)
+![UI](/assets/article_images/2026-11-17-puzzle-hunter-pro/UI.png)
 
 There is everything you need for this app to run for free. Nothing more.
 
@@ -117,7 +117,7 @@ But wait, is there more? That's it ?!?
 
 This would be too simple to use if we had no table. My whole life is somewhere in the table saved. So I created one here also:
 
-![Table](/assets/article_images/2026-12-01-puzzle-hunter-pro/Table.png)
+![Table](/assets/article_images/2026-11-17-puzzle-hunter-pro/Table.png)
 
 Look at this beauty. We have columns, we have rows, what more do you need...
 
@@ -135,7 +135,7 @@ So far so simple? And now are we done? Not even close. What is an Excel table wi
 
 I wanted to see how my speed behaves with time, so a simple graph with a history, why not. Here it is:
 
-![Graph](/assets/article_images/2026-12-01-puzzle-hunter-pro/Graph.png)
+![Graph](/assets/article_images/2026-11-17-puzzle-hunter-pro/Graph.png)
 
 So what is on this graph. There is a timeline. 30 seconds are on this graph. The solver started with around 12K keys per second and stayed there approximately for 22 seconds, and then I turned Intel Turbo ON and the speed of my solver went up to a maximum of `18.1K` keys/s until I disabled Intel Turbo a few seconds after. Then the speed went down. Simple. History can be increased up to 5 minutes.
 
@@ -149,7 +149,7 @@ If you do not like the Graph, then you can hide it. It will not work in the back
 This is a preview of the FREE version of the app.
 
 <video controls style="max-width: 100%; width: 600px;">
-  <source src="/assets/article_images/2026-12-01-puzzle-hunter-pro/Free.mp4" type="video/mp4">
+  <source src="/assets/article_images/2026-11-17-puzzle-hunter-pro/Free.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -217,7 +217,7 @@ So, who has that? I am:
 
 
 <video controls style="max-width: 100%; width: 600px;">
-  <source src="/assets/article_images/2026-12-01-puzzle-hunter-pro/ALL.mp4" type="video/mp4">
+  <source src="/assets/article_images/2026-11-17-puzzle-hunter-pro/ALL.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -230,11 +230,11 @@ So is there more?
 
 So far we spoke only about the free version. After you switch Device to GPU, new buttons will be available for you, one of them is `Buy Kernel Pack`.
 
-![GPU](/assets/article_images/2026-12-01-puzzle-hunter-pro/GPU.png)
+![GPU](/assets/article_images/2026-11-17-puzzle-hunter-pro/GPU.png)
 
 When you accept my terms of service, you can buy the kernel pack. For those sceptical bastards, I created even a `Demo` for fuck's sake. Try to request it just to see how it works. When you are ready, you can request the real thing. Right now this is the product window:
 
-![Packages](/assets/article_images/2026-12-01-puzzle-hunter-pro/Packages.png)
+![Packages](/assets/article_images/2026-11-17-puzzle-hunter-pro/Packages.png)
 
 When you decide to buy, here is how it works:
 
@@ -261,7 +261,7 @@ The kernels themselves are the real product. Different coordinate systems, diffe
 When I get your request, and after I verify that everything is OK, I will compile the kernels and send them to you. This is how loading of the `Demo` and `Pro` kernel is working:
 
 <video controls style="max-width: 100%; width: 600px;">
-  <source src="/assets/article_images/2026-12-01-puzzle-hunter-pro/Kernels.mp4" type="video/mp4">
+  <source src="/assets/article_images/2026-11-17-puzzle-hunter-pro/Kernels.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -270,7 +270,7 @@ And finally: is that it?
 No, of course not. We did not speak about benchmarking the card. Which kernel parameter is the best for your card? I have no idea. That's why we have now benchmarking for a single kernel or all of them. Please notice that benchmarking all kernels takes some time. But since you have to do this only once, it pays off.
 
 <video controls style="max-width: 100%; width: 600px;">
-  <source src="/assets/article_images/2026-12-01-puzzle-hunter-pro/Benchmark.mp4" type="video/mp4">
+  <source src="/assets/article_images/2026-11-17-puzzle-hunter-pro/Benchmark.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -310,6 +310,34 @@ And finally is that it?
 
 Fuck no!
 
-# Tray icon
+# Tray Icon
 
-It took me few days to write this post. As you can see there is mabe a too much text. I tried to be brief. Too hard. This project is really a special one. 
+It took me a few days to write this post. As you can see, the text might be a little too long. I tried to keep it brief. But that’s not so easy, because this project is truly something very special.
+
+I’ve also created a taskbar icon for this app.
+
+Left-click – Hide/show app
+Middle-click – Start/stop solver
+Right-click – Menu
+
+
+I’m not sure, though, whether this taskbar icon will be released in version 1.0.0 or a little later. The reason is that I also wanted to implement an idle solver. This is supposed to detect when the PC has been idle for, say, 3 minutes, and then start the solver until you’re back at the computer.
+
+Once again, I’m running into the limitations of this new Wayland protocol. I miss X so much. I really miss you.
+
+Wayland can’t hide windows; EGUI has had problems with this for years. The issue with KDE’s detection of idle time under Wayland isn’t exactly helpful either. I think the current code would already work under X, but I’m too lazy to look for a Linux system with X support, even though I’d love to.
+
+
+# Advance Ticket Sales
+
+Due to some personal developments in my life, I’ll be completely offline over Christmas and New Year’s. No, I’m not going to jail, hahaha, I’m going on vacation with my family and won’t be taking my gaming laptop with me. Snow and laptops, no way.
+
+Since my app has been running smoothly for quite some time now, I don’t even know why I’m hesitating.
+
+> The official pre-sale runs from November 23, 2026, through December 23, 2026.
+
+The Kernels are being offered at a 50% discount.
+
+> No Kernels will be sold from December 23, 2026, through January 23, 2027.
+
+Let the game begin.
