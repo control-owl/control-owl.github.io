@@ -316,9 +316,9 @@ It took me a few days to write this post. As you can see, the text might be a li
 
 I’ve also created a taskbar icon for this app.
 
-Left-click – Hide/show app
-Middle-click – Start/stop solver
-Right-click – Menu
+- Left-click – Hide/show app
+- Middle-click – Start/stop solver
+- Right-click – Menu
 
 
 I’m not sure, though, whether this taskbar icon will be released in version 1.0.0 or a little later. The reason is that I also wanted to implement an idle solver. This is supposed to detect when the PC has been idle for, say, 3 minutes, and then start the solver until you’re back at the computer.
