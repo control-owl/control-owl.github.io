@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Puzzle Hunter Pro"
-date: 2026-11-17 00:00:00
+date: 2026-11-16 00:00:00
 categories: blog post
 # tags: featured
-image: /assets/article_images/2026-11-17-puzzle-hunter-pro/header.png
-image2: /assets/article_images/2026-11-17-puzzle-hunter-pro/header-mobile.png
+image: /assets/article_images/2026-11-16-puzzle-hunter-pro/header.png
+image2: /assets/article_images/2026-11-16-puzzle-hunter-pro/header-mobile.png
 ---
 
 
@@ -55,7 +55,7 @@ The core of my app is simple. It is written in `Rust`, since Rust is the best on
 
 Look at this simple interface:
 
-![UI](/assets/article_images/2026-11-17-puzzle-hunter-pro/UI.png)
+![UI](/assets/article_images/2026-11-16-puzzle-hunter-pro/UI.png)
 
 There is everything you need for this app to run for free. Nothing more.
 
@@ -117,7 +117,7 @@ But wait, is there more? That's it ?!?
 
 This would be too simple to use if we had no table. My whole life is somewhere in the table saved. So I created one here also:
 
-![Table](/assets/article_images/2026-11-17-puzzle-hunter-pro/Table.png)
+![Table](/assets/article_images/2026-11-16-puzzle-hunter-pro/Table.png)
 
 Look at this beauty. We have columns, we have rows, what more do you need...
 
@@ -135,7 +135,7 @@ So far so simple? And now are we done? Not even close. What is an Excel table wi
 
 I wanted to see how my speed behaves with time, so a simple graph with a history, why not. Here it is:
 
-![Graph](/assets/article_images/2026-11-17-puzzle-hunter-pro/Graph.png)
+![Graph](/assets/article_images/2026-11-16-puzzle-hunter-pro/Graph.png)
 
 So what is on this graph. There is a timeline. 30 seconds are on this graph. The solver started with around 12K keys per second and stayed there approximately for 22 seconds, and then I turned Intel Turbo ON and the speed of my solver went up to a maximum of `18.1K` keys/s until I disabled Intel Turbo a few seconds after. Then the speed went down. Simple. History can be increased up to 5 minutes.
 
@@ -149,7 +149,7 @@ If you do not like the Graph, then you can hide it. It will not work in the back
 This is a preview of the FREE version of the app.
 
 <video controls style="max-width: 100%; width: 600px;">
-  <source src="/assets/article_images/2026-11-17-puzzle-hunter-pro/Free.mp4" type="video/mp4">
+  <source src="/assets/article_images/2026-11-16-puzzle-hunter-pro/Free.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -217,7 +217,7 @@ So, who has that? I am:
 
 
 <video controls style="max-width: 100%; width: 600px;">
-  <source src="/assets/article_images/2026-11-17-puzzle-hunter-pro/ALL.mp4" type="video/mp4">
+  <source src="/assets/article_images/2026-11-16-puzzle-hunter-pro/ALL.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -230,38 +230,38 @@ So is there more?
 
 So far we spoke only about the free version. After you switch Device to GPU, new buttons will be available for you, one of them is `Buy Kernel Pack`.
 
-![GPU](/assets/article_images/2026-11-17-puzzle-hunter-pro/GPU.png)
+![GPU](/assets/article_images/2026-11-16-puzzle-hunter-pro/GPU.png)
 
 When you accept my terms of service, you can buy the kernel pack. For those sceptical bastards, I created even a `Demo` for fuck's sake. Try to request it just to see how it works. When you are ready, you can request the real thing. Right now this is the product window:
 
-![Packages](/assets/article_images/2026-11-17-puzzle-hunter-pro/Packages.png)
+![Packages](/assets/article_images/2026-11-16-puzzle-hunter-pro/Packages.png)
 
 When you decide to buy, here is how it works:
 
 - The app detects your hardware specification (for compiling the proper kernels)
 - You have the option to pay with crypto, choose your coin
-- Send the desired amount to the address given only to you
-- Enter transaction ID in next step
-- Send an email to the email address given only to you
+- Send the desired amount to the address given to you
+- Enter transaction ID
+- Send a request
 
 So let me explain a bit here since I know there will be users who have no idea what they are doing...
 
 When you start the buying process, a crypto address will be generated only for you. Every user gets their deposit address. After you pay the desired amount, copy your Transaction ID into the app to verify the payment. 
 
-Then you will get to a new process of generating an email. In order to protect your security, I do not want that anyone is able to know what you bought besides `ME AND YOU`. I will honour confidentiality here. 
+Then you will get to a new process of generating a request. In order to protect your security, I do not want that anyone is able to know what you bought besides `ME AND YOU`. I will honour confidentiality here. 
 
-The program will generate an encrypted message which you will have to send to an email address shown in the process. This email address is only for this machine. 
+The program will generate an encrypted message which will be sent to me.
 
-> Every machine has its own email and crypto address. 
+Everything that is sent online is the request and it is encrypted. When the kernels are compiled according to the encrypted request, a kernel package will be sent to the email address which you stated in the order process. Please make sure you can receive emails on this address. The `OWL` file is below 10 MB.
 
-Everything that is sent online is the email and it is encrypted. When the kernels are compiled according to the encrypted request, a kernel package will be sent to the email address which you stated in the order process. Please make sure you can receive emails on this address. The `OWL` file is below 10 MB.
+> If process is unable to send auto request you will be offered a manual way. You have to send an email to address shown to you with an encrypted message. You can use any mail program to do this.
 
 The kernels themselves are the real product. Different coordinate systems, different trade-offs. Some are better when you run many parallel keys. Some prefer fewer but heavier. Some are tuned for the known-pubkey puzzles higher up.
 
 When I get your request, and after I verify that everything is OK, I will compile the kernels and send them to you. This is how loading of the `Demo` and `Pro` kernel is working:
 
 <video controls style="max-width: 100%; width: 600px;">
-  <source src="/assets/article_images/2026-11-17-puzzle-hunter-pro/Kernels.mp4" type="video/mp4">
+  <source src="/assets/article_images/2026-11-16-puzzle-hunter-pro/Kernels.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -270,7 +270,7 @@ And finally: is that it?
 No, of course not. We did not speak about benchmarking the card. Which kernel parameter is the best for your card? I have no idea. That's why we have now benchmarking for a single kernel or all of them. Please notice that benchmarking all kernels takes some time. But since you have to do this only once, it pays off.
 
 <video controls style="max-width: 100%; width: 600px;">
-  <source src="/assets/article_images/2026-11-17-puzzle-hunter-pro/Benchmark.mp4" type="video/mp4">
+  <source src="/assets/article_images/2026-11-16-puzzle-hunter-pro/Benchmark.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
