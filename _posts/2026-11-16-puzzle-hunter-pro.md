@@ -246,7 +246,7 @@ When you decide to buy, here is how it works:
 
 So let me explain a bit here since I know there will be users who have no idea what they are doing...
 
-When you start the buying process, a crypto address will be generated only for you. Every user gets their deposit address. After you pay the desired amount, copy your Transaction ID into the app to verify the payment. 
+When you start the buying process, a **crypto address will be generated only for you**. `Every user gets their deposit address.` After you pay the desired amount, copy your Transaction ID into the app to verify the payment. 
 
 Then you will get to a new process of generating a request. In order to protect your security, I do not want that anyone is able to know what you bought besides `ME AND YOU`. I will honour confidentiality here. 
 
@@ -254,7 +254,7 @@ The program will generate an encrypted message which will be sent to me.
 
 Everything that is sent online is the request and it is encrypted. When the kernels are compiled according to the encrypted request, a kernel package will be sent to the email address which you stated in the order process. Please make sure you can receive emails on this address. The `OWL` file is below 10 MB.
 
-> If process is unable to send auto request you will be offered a manual way. You have to send an email to address shown to you with an encrypted message. You can use any mail program to do this.
+> If process is unable to send auto request you will be offered a manual/backup way. You have to send an email to address shown only to you with an encrypted message. You can use any mail program to do this.
 
 The kernels themselves are the real product. Different coordinate systems, different trade-offs. Some are better when you run many parallel keys. Some prefer fewer but heavier. Some are tuned for the known-pubkey puzzles higher up.
 
